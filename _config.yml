@@ -27,6 +27,26 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bright_shard
 github_username:  bright_shard
 
+collections:
+  authors:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
 # Build settings
 theme: minima
 plugins:
