@@ -1,5 +1,5 @@
-collections:
-  authors:
+collections: authors
+  authors: bright, ultra
     output: true
 
 defaults:
