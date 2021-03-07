@@ -1,6 +1,6 @@
-collections: authors
-  authors: bright, ultra
-    output: true
+collections:
+  - authors:
+      output: true
 
 defaults:
   - scope:
