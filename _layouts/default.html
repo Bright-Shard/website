@@ -7,6 +7,6 @@
   </head>
   <body>
     {% include nav.html %}
-    {{ content }}
+    {{ content | markdownify}}
   </body>
 </html>
