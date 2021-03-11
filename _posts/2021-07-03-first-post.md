@@ -3,6 +3,7 @@ layout: post
 title: First Post!
 date: 7.3.2021
 author: bright
+excerpt: The first post on my new blogging system!
 ---
 
 # My first post!

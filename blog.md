@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: articles
 title: Blog
 ---
 # Latest Blog Posts
