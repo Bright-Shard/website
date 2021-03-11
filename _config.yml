@@ -28,7 +28,7 @@ twitter_username: bright_shard
 github_username:  bright_shard
 
 # Build settings
-theme: minima
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
