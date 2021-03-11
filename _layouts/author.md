@@ -2,7 +2,7 @@
 layout: default
 ---
 # {{page.name}}
-## {{page.position}}
+#### {{page.position}}
 
 {{ content }}
 

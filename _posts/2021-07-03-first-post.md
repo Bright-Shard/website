@@ -6,4 +6,4 @@ author: bright
 ---
 
 # My first post!
-After I made the [blogging system](/blog) for [my website](/), I wanted to test it out. So here it is!
+After I made the [blogging system](/blog.html) for [my website](/), I wanted to test it out. So here it is!
