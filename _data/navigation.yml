@@ -1,12 +1,19 @@
 header:
+
   - titles:
-      # @start locale config
-      en      : &EN       Blog/Archive
-      # @end locale config
-    url: /blog.html
+      # @start Locale config
+      en      : &EN       Home
+      # @ned Locale config
+    url: /index.html
 
   - titles:
       # @start locale config
       en      : &EN       About
       # @end locale config
     url: /about.html
+
+  - titles:
+      # @start locale config
+      en      : &EN       Blog/Archive
+      # @end locale config
+    url: /archive.html
