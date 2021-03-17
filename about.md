@@ -1,11 +1,12 @@
 ---
-titles: About
-  # @start locale config
-  en      : &EN       About
-  # @end locale config
+layout: page
+title: About
+# @start locale config
+en      : &EN       About
+# @end locale config
 key: page-about
 ---
-# Who is on the team?
+## Who is on the team?
 
 Yup, there is a whole team behind this software - not just me (BrightShard).
 
