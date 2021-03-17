@@ -1,19 +1,27 @@
 header:
-
-  - titles:
-      # @start Locale config
-      en      : &EN       Home
-      # @ned Locale config
+  - title: Home
     url: /index.html
 
-  - titles:
-      # @start locale config
-      en      : &EN       About
-      # @end locale config
+  - title: About
     url: /about.html
 
-  - titles:
-      # @start locale config
-      en      : &EN       Blog/Archive
-      # @end locale config
+  - title: My Projects
+    url: /projects/index.html
+
+  - title: Blog/Archive
     url: /archive.html
+
+  - title: Edit on GitHub
+    url: https://github.com/Bright-Shard/bright-shard.github.io
+
+projects:
+  - title: My Projects
+    children:
+      - title: Home
+        url: /projects/index.html
+      - title: Hypertasker
+        url: /projects/hypertasker.html
+      - title: Shell Striker
+        url: /projects/shellStriker.html
+      - title: BeeWare
+        url: /projects/beeware.html
