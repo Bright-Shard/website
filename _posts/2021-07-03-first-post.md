@@ -1,5 +1,4 @@
 ---
-layout: post
 title: First Post!
 date: 7.3.2021
 author: bright
