@@ -25,3 +25,6 @@ To be honest, I'm not sure if I'll be able to implement an RSS reader. I will ha
 
 ## Why am I making this?
 My goal with Hypertasker is to combine lots of somewhat niche tasks into one app. Finding one service with calendars, to-dos, notes, emails, and other tasks in one place is difficult, if not impossible; so I'm doing it myself. I'm tired of opening 20 tabs for various emails and notes, so instead, I'll put it in one place - and in an app that I control, not in a greedy company's website.
+
+## Can I run Hypertasker on Windows/MacOS/Linux/etc?
+Yes. You can run Hypertasker on almost anything, actually. This is because I use [Beeware](https://beeware.org) in my apps. Beeware lets you make an app in Python and deploy it anywhere. You can get more information from the Beeware page in the sidebar!

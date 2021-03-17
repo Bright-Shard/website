@@ -20,4 +20,7 @@ Yes, and those programs are awesome! Scanners such as those is what Shell Strike
 ## Can't I just look for exploits myself?
 You can, but it will take longer. In competitive events like HTB bloods or CTFs, you need automation to get the edge on competitors. While they're googling exploits, you will already have the results in Shell Striker.
 
+# Can I run Shell Striker in [insert OS name here]?
+Theoretically, you can run Shell Striker on any platform, because I use [Beeware](https://beeware.org) in my apps. Beeware lets you write an app once, in Python, and then deploy it to all operating systems - including mobile! The only issue is, Shell Striker requires scanners like NMap to run. It's not easy to put a binary in my app and then just have it *work*; new versions could come out, or it might not support an OS I want to put Shell Striker on. I've been thinking of having a server, based in Linux, that Windows, MacOS, and mobile Shell Striker apps could connect to for it to run; however, I'm not sure how easy or well that would work. So, the first release will probably be linux-only.
+
 # There's not a release for Shell Striker yet. I will develop it after I finish Hypertasker.
