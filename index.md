@@ -2,7 +2,7 @@
 layout: home
 title: Home
 ---
-# BrightShard's Official Website
+# BrightShard's Website
 ## What is this website for?
 I'm BrightShard, a teenager who is developing FOSS software - that is, Free and Open-Source Software. I programmed this website to share my apps with the world! If you're wondering, yes, this website is also FOSS. You can see it's code [here.](https://github.com/Bright-Shard/bright-shard.github.io/)
 

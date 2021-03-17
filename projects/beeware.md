@@ -1,8 +1,8 @@
 ---
-layout: page
-title: BeeWare
 sidebar:
   nav: projects
+layout: page
+title: BeeWare
 ---
 ## Disclaimer: I don't make Beeware, and I'm not trying to claim that I make Beeware. This page is just to explain what it is and how to use it, because I use Beeware and think it's awesome.
 ## What is Beeware?

@@ -20,9 +20,10 @@ text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : BrightShard's FOSS
+title   : BrightShard's Official Website
 description: > # this means to ignore newlines until "Language & timezone"
-  Here you can get BrightShard's Free and Open-Source Software! (You can also follow my social links :)
+  Here you can learn about and get my Free and Open-Source Software! I've got high-quality apps that cost you nothing - no purchases, no ads, and no trackers.
+  You can also follow my social links here :)
 
 
 ## => Language and Timezone
