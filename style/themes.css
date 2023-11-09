@@ -1,0 +1,55 @@
+/*
+    THEMES
+    
+    All the themes currently on the website, and their respective colours.
+*/
+
+/* catppuccin mocha: https://github.com/catppuccin/catppuccin#-palette */
+#theme-catppuccin-mocha:checked ~ #root {
+    --background: #1e1e2e;
+    --surface-0: #313244;
+    --surface-1: #45475a;
+    --surface-2: #585b70;
+    --text: #cdd6f4;
+    --subtext-0: #a6adc8;
+    --subtext-1: #bac2de;
+}
+/* catppuccin macchiato: https://github.com/catppuccin/catppuccin#-palette */
+#theme-catppuccin-macchiato:checked ~ #root {
+    --background: #24273a;
+    --surface-0: #363a4f;
+    --surface-1: #494d64;
+    --surface-2: #5b6078;
+    --text: #cad3f5;
+    --subtext-0: #a5adcb;
+    --subtext-1: #b8c0e0;
+}
+/* catppuccin frappe: https://github.com/catppuccin/catppuccin#-palette */
+#theme-catppuccin-frappe:checked ~ #root {
+    --background: #303446;
+    --surface-0: #414559;
+    --surface-1: #51576d;
+    --surface-2: #626880;
+    --text: #c6d0f5;
+    --subtext-0: #a5adce;
+    --subtext-1: #b5bfe2;
+}
+/* catppuccin latte: https://github.com/catppuccin/catppuccin#-palette */
+#theme-catppuccin-latte:checked ~ #root {
+    --background: #eff1f5;
+    --surface-0: #ccd0da;
+    --surface-1: #bcc0cc;
+    --surface-2: #acb0be;
+    --text: #4c4f69;
+    --subtext-0: #6c6f85;
+    --subtext-1: #5c5f77;
+}
+
+#root {
+    --padding: 12px;
+    --gap: 5px;
+    --rounding: 16px;
+    --hover-opacity: 40%;
+    --hover-animation-len: .4s;
+    --press-opacity: 60%;
+}

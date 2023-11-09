@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style/main.css" />
+    <script src="lmao.js"></script>
+</head>
+
+<body>
+    <!--
+        Theme selections. Putting them here lets me select the #root element
+        with CSS selectors, so I don't need JavaScript for theme switching.
+    -->
+    <input name="theme" id="theme-catppuccin-mocha" type="radio" checked hidden />
+    <input name="theme" id="theme-catppuccin-macchiato" type="radio" hidden />
+    <input name="theme" id="theme-catppuccin-frappe" type="radio" hidden />
+    <input name="theme" id="theme-catppuccin-latte" type="radio" hidden />
+    
+    <!--
+        Activate page markers. Again, putting them here lets me select the
+        #root element with pure CSS, allowing for a kind of pure-CSS CSR.
+    -->
+    <a id="page-home" hidden></a>
+    <a id="page-projects" hidden></a>
+    <a id="page-blog" hidden></a>
+    <a id="page-settings" hidden></a>
+    
+    <!--
+        The #root element is where all the actual content is placed.
+    -->
+    <div id="root">
+        <div id="navbar">
+            <a href="#page-home" class="navbar-item">
+                <span class="navbar-icon material-symbols">
+                    home
+                </span>
+                <p class="navbar-label">
+                    Home
+                </p>
+            </a>
+            <a href="#page-projects" class="navbar-item">
+                <span class="navbar-icon material-symbols">
+                    browse
+                </span>
+                <p class="navbar-label">
+                    Projects
+                </p>
+            </a>
+            <a href="#page-blog" class="navbar-item">
+                <span class="navbar-icon material-symbols">
+                    book
+                </span>
+                <p class="navbar-label">
+                    Blog
+                </p>
+            </a>
+            
+            <a href="#page-settings" class="navbar-item" id="settings-icon">
+                <span class="navbar-icon material-symbols">
+                    settings
+                </span>
+            </a>
+        </div>
+    </div>
+</body>
