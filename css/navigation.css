@@ -25,7 +25,7 @@
 */
 #navbar {
 	background-color: var(--surface-0);
-    
+    z-index: 1;
 	display: flex;
 	align-items: center;
     gap: calc(var(--gap) * 2);

@@ -23,10 +23,26 @@
     }
     
     #navbar {
+        position: absolute;
         width: 100%;
         height: var(--navbar-height);
+        bottom: 0;
         flex-direction: row;
     }
+    
+	#settings-icon {
+		position: absolute;
+		right: var(--padding);
+		
+		& > .navbar-icon {
+			font-size: 32px;
+			padding: 5px;
+			
+			&::before {
+				border-radius: calc(var(--rounding) * 2);
+			}
+		}
+	}
 }
 
 @media (min-width: 600px) and (max-width: 839px) {
@@ -40,6 +56,20 @@
         height: 100%;
         flex-direction: column;
     }
+    
+	#settings-icon {
+		position: absolute;
+		bottom: var(--padding);
+		
+		& > .navbar-icon {
+			font-size: 32px;
+			padding: 6px;
+			
+			&::before {
+				border-radius: calc(var(--rounding) * 2) !important;
+			}
+		}
+	}
 }
 @media (min-width: 839px) {
     :root {
@@ -52,4 +82,17 @@
         height: 100%;
         flex-direction: column;
     }
+    
+	#settings-icon {
+		margin-top: auto;
+		
+		& > .navbar-icon {
+			font-size: 32px;
+			padding: 6px;
+			
+			&::before {
+				border-radius: calc(var(--rounding) * 2) !important;
+			}
+		}
+	}
 }

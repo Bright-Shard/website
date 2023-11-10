@@ -10,24 +10,10 @@
 		position: absolute;
 		width: calc(100% - var(--navbar-width));
 		height: calc(100% - var(--navbar-height));
-		top: var(--navbar-height);
+		top: 0;
 		left: var(--navbar-width);
 		padding: var(--padding);
-	}
-}
-
-@layer overrides {
-	#settings-icon {
-		margin-top: auto;
-		
-		& > .navbar-icon {
-			font-size: 32px;
-			padding: 6px;
-			
-			&::before {
-				border-radius: calc(var(--rounding) * 2) !important;
-			}
-		}
+		overflow: auto;
 	}
 }
 
