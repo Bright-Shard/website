@@ -172,3 +172,19 @@
         display: none;
     }
 }
+	
+/* 
+    The home page is highlighted by default. When the user first loads the page,
+    there won't be a target element, so we can't use that same trick for
+    highlighting it. Instead, it's highlighted by default and then other pages
+    will un-highlight it.
+*/
+#navbar > .navbar-item[href="#page-home"] > .navbar-icon {
+    font-variation-settings: 'FILL' 1;
+    &::before {
+        opacity: var(--press-opacity);
+    }
+}
+#home-content {
+    display: block;
+}
