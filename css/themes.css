@@ -46,8 +46,6 @@
 }
 
 #root {
-    --padding: 12px;
-    --gap: 5px;
     --rounding: 16px;
     --hover-opacity: 40%;
     --hover-animation-len: .4s;

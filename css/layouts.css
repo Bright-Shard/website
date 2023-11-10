@@ -1,0 +1,55 @@
+/*
+    LAYOUTS
+    
+    Makes the page responsive, and stores spacing information.
+    
+    Screen size classes:
+    x<600         small
+    600<=x<840    medium
+    x>=840        large
+    Taken from Material 3:
+    https://m3.material.io/foundations/layout/applying-layout/window-size-classes#4ee6b7bb-864a-440c-9903-f738cc94fd58
+*/
+
+#root {
+    --padding: 12px;
+    --gap: 5px;
+}
+
+@media (max-width: 599px) {
+    :root {
+        --navbar-width: 0px;
+        --navbar-height: 75px;
+    }
+    
+    #navbar {
+        width: 100%;
+        height: var(--navbar-height);
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 839px) {
+    :root {
+        --navbar-width: 75px;
+        --navbar-height: 0px;
+    }
+    
+    #navbar {
+        width: var(--navbar-width);
+        height: 100%;
+        flex-direction: column;
+    }
+}
+@media (min-width: 839px) {
+    :root {
+        --navbar-width: 75px;
+        --navbar-height: 0px;
+    }
+    
+    #navbar {
+        width: var(--navbar-width);
+        height: 100%;
+        flex-direction: column;
+    }
+}
