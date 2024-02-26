@@ -1,16 +1,16 @@
 /*
     NAVIGATION
-    
+
     Styles for the navbar & styles that power actual
     navigation on the page.
-    
+
     This code will be simplified a lot once `:has()` is
     supported by FireFox & more widely supported.
 */
 
 /*
     Navigation Bar
-    
+
     This contains 4 kinds of elements:
     - The actual navigation bar, which just has a background colour
       and flexbox for aligning the items in it.
@@ -19,171 +19,196 @@
     - The icons, which use Material Icons for their icons, and the
       `::before` psuedoclass for the hover/selected effect.
     - The labels, which are just text.
-    
+
     Note that several properties (flex direction and sizing) are set
     in `layouts.css` since that depends on the screen size.
 */
 #navbar {
-	background-color: var(--surface-0);
+    background-color: var(--surface-0);
     z-index: 1;
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
     gap: calc(var(--gap) * 2);
     padding: var(--padding);
-    
-	& .navbar-item {
-		width: 48px;
-		height: 48px;
-		text-decoration-line: none;
-		color: var(--text);
-        
-		display: flex;
-  		flex-direction: column;
-  		align-items: center;
-        
-		&:hover {
-			cursor: pointer;
-			
-			& > .navbar-icon {
-				font-weight: 600;
-				
-				&::before {
-					opacity: var(--hover-opacity);
-				}
-			}
-		}
-        
-		& .navbar-icon {
-			font-size: 24px;
-			position: relative;
-			padding: 2px 12px;
-			transition-duration: var(--hover-animation-len);
-			z-index: 0;
-			
-			&::before {
-				content: "";
-		    	border-style: solid;
-		    	border-width: 0px;
-		    	border-radius: var(--rounding);
-		    	background-color: var(--surface-2);
-		    	width: 100%;
-		    	height: 100%;
-				top: 0;
-				left: 0;
-				opacity: 0;
-				position: absolute;
-				transition-duration: var(--hover-animation-len);
-				z-index: -1;
-			}
-		}
-        
-		& .navbar-label {
-            font-size: 12px;
-			margin: 0px;
-			margin-top: 5px;
-		}
-	}
+}
+#navbar .navbar-item {
+    width: 48px;
+    height: 48px;
+    text-decoration-line: none;
+    color: var(--text);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#navbar .navbar-item:hover {
+    cursor: pointer;
+}
+#navbar .navbar-item:hover > .navbar-icon {
+    font-weight: 600;
+}
+#navbar .navbar-item:hover > .navbar-icon::before {
+    opacity: var(--hover-opacity);
+}
+#navbar .navbar-item .navbar-icon {
+    font-size: 24px;
+    position: relative;
+    padding: 2px 12px;
+    transition-duration: var(--hover-animation-len);
+    z-index: 0;
+}
+#navbar .navbar-item .navbar-icon::before {
+    content: "";
+    border-style: solid;
+    border-width: 0px;
+    border-radius: var(--rounding);
+    background-color: var(--surface-2);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition-duration: var(--hover-animation-len);
+    z-index: -1;
+}
+#navbar .navbar-item .navbar-label {
+    font-size: 12px;
+    margin: 0px;
+    margin-top: 5px;
 }
 
 /*
     Navigation Logic
-    
+
     This uses the `:target` pseudo-class to find the active page, then override
     the corresponding rules in `#root`.
-    
+
     Hopefully, this code will be simplified once `:has()` is stable in Firefox.
     Currently, depending on the active page, we override rules in `#root`. This means
     we have to specify rules for each individual page, even if they do the same thing,
     leading to a lot of repeated/very similar code.
 */
 
-#page-projects:target ~ #root {
-    & > #navbar {
-        & > .navbar-item[href = "#page-projects"] > .navbar-icon {
-            font-variation-settings: 'FILL' 1;
-            &::before {
-                opacity: var(--press-opacity);
-            }
-        }
-        
-        & > .navbar-item[href = "#page-home"] > .navbar-icon {
-            font-variation-settings: 'FILL' 0;
-            &::before {
-                opacity: 0;
-            }
-        }
-    }
-    
-    & > #projects-content {
-        display: block;
-    }
-    
-    & > #home-content {
-        display: none;
-    }
+#page-projects:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-projects"]
+    > .navbar-icon {
+    font-variation-settings: "FILL" 1;
 }
-#page-blog:target ~ #root {
-    & > #navbar {
-        & > .navbar-item[href = "#page-blog"] > .navbar-icon {
-            font-variation-settings: 'FILL' 1;
-            &::before {
-                opacity: var(--press-opacity);
-            }
-        }
-        
-        & > .navbar-item[href = "#page-home"] > .navbar-icon {
-            font-variation-settings: 'FILL' 0;
-            &::before {
-                opacity: 0;
-            }
-        }
-    }
-    
-    & > #blog-content {
-        display: block;
-    }
-    
-    & > #home-content {
-        display: none;
-    }
+#page-projects:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-projects"]
+    > .navbar-icon::before {
+    opacity: var(--press-opacity);
 }
-#page-settings:target ~ #root {
-    & > #navbar {
-        & > .navbar-item[href = "#page-settings"] > .navbar-icon {
-            font-variation-settings: 'FILL' 1;
-            &::before {
-                opacity: var(--press-opacity);
-            }
-        }
-        
-        & > .navbar-item[href = "#page-home"] > .navbar-icon {
-            font-variation-settings: 'FILL' 0;
-            &::before {
-                opacity: 0;
-            }
-        }
-    }
-    
-    & > #settings-content {
-        display: block;
-    }
-    
-    & > #home-content {
-        display: none;
-    }
+#page-projects:target ~ #root > #projects-content {
+    display: block;
 }
-	
-/* 
+
+#page-blog:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-blog"]
+    > .navbar-icon {
+    font-variation-settings: "FILL" 1;
+}
+#page-blog:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-blog"]
+    > .navbar-icon::before {
+    opacity: var(--press-opacity);
+}
+#page-blog:target ~ #root > #blog-content {
+    display: block;
+}
+
+#page-settings:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-settings"]
+    > .navbar-icon {
+    font-variation-settings: "FILL" 1;
+}
+#page-settings:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-settings"]
+    > .navbar-icon::before {
+    opacity: var(--press-opacity);
+}
+#page-settings:target ~ #root > #settings-content {
+    display: block;
+}
+
+/* Prevent home from being active while another page is */
+
+#page-projects:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-home"]
+    > .navbar-icon {
+    font-variation-settings: "FILL" 0;
+}
+#page-projects:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-home"]
+    > .navbar-icon::before {
+    opacity: 0;
+}
+#page-projects:target ~ #root > #home-content {
+    display: none;
+}
+#page-blog:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-home"]
+    > .navbar-icon {
+    font-variation-settings: "FILL" 0;
+}
+#page-blog:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-home"]
+    > .navbar-icon::before {
+    opacity: 0;
+}
+#page-blog:target ~ #root > #home-content {
+    display: none;
+}
+#page-settings:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-home"]
+    > .navbar-icon {
+    font-variation-settings: "FILL" 0;
+}
+#page-settings:target
+    ~ #root
+    > #navbar
+    > .navbar-item[href="#page-home"]
+    > .navbar-icon::before {
+    opacity: 0;
+}
+#page-settings:target ~ #root > #home-content {
+    display: none;
+}
+
+/*
     The home page is highlighted by default. When the user first loads the page,
     there won't be a target element, so we can't use that same trick for
     highlighting it. Instead, it's highlighted by default and then other pages
     will un-highlight it.
 */
 #navbar > .navbar-item[href="#page-home"] > .navbar-icon {
-    font-variation-settings: 'FILL' 1;
-    &::before {
-        opacity: var(--press-opacity);
-    }
+    font-variation-settings: "FILL" 1;
+}
+#navbar > .navbar-item[href="#page-home"] > .navbar-icon::before {
+    opacity: var(--press-opacity);
 }
 #home-content {
     display: block;

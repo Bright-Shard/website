@@ -1,8 +1,9 @@
 /*
     LAYOUTS
-    
+
     Makes the page responsive, and stores spacing information.
-    
+    This is only used for the actual website, not the SVG version. It breaks in SVGs.
+
     Screen size classes:
     x<600         small
     600<=x<840    medium
@@ -21,7 +22,7 @@
         --navbar-width: 0px;
         --navbar-height: 75px;
     }
-    
+
     #navbar {
         position: absolute;
         width: 100%;
@@ -29,20 +30,20 @@
         bottom: 0;
         flex-direction: row;
     }
-    
-	#settings-icon {
-		position: absolute;
-		right: var(--padding);
-		
-		& > .navbar-icon {
-			font-size: 32px;
-			padding: 5px;
-			
-			&::before {
-				border-radius: calc(var(--rounding) * 2);
-			}
-		}
-	}
+
+    #settings-icon {
+        position: absolute;
+        right: var(--padding);
+
+        & > .navbar-icon {
+            font-size: 32px;
+            padding: 5px;
+
+            &::before {
+                border-radius: calc(var(--rounding) * 2);
+            }
+        }
+    }
 }
 
 @media (min-width: 600px) and (max-width: 839px) {
@@ -50,49 +51,49 @@
         --navbar-width: 75px;
         --navbar-height: 0px;
     }
-    
+
     #navbar {
         width: var(--navbar-width);
         height: 100%;
         flex-direction: column;
     }
-    
-	#settings-icon {
-		position: absolute;
-		bottom: var(--padding);
-		
-		& > .navbar-icon {
-			font-size: 32px;
-			padding: 6px;
-			
-			&::before {
-				border-radius: calc(var(--rounding) * 2) !important;
-			}
-		}
-	}
+
+    #settings-icon {
+        position: absolute;
+        bottom: var(--padding);
+
+        & > .navbar-icon {
+            font-size: 32px;
+            padding: 6px;
+
+            &::before {
+                border-radius: calc(var(--rounding) * 2) !important;
+            }
+        }
+    }
 }
 @media (min-width: 839px) {
     :root {
         --navbar-width: 75px;
         --navbar-height: 0px;
     }
-    
+
     #navbar {
         width: var(--navbar-width);
         height: 100%;
         flex-direction: column;
     }
-    
-	#settings-icon {
-		margin-top: auto;
-		
-		& > .navbar-icon {
-			font-size: 32px;
-			padding: 6px;
-			
-			&::before {
-				border-radius: calc(var(--rounding) * 2) !important;
-			}
-		}
-	}
+
+    #settings-icon {
+        margin-top: auto;
+
+        & > .navbar-icon {
+            font-size: 32px;
+            padding: 6px;
+
+            &::before {
+                border-radius: calc(var(--rounding) * 2) !important;
+            }
+        }
+    }
 }

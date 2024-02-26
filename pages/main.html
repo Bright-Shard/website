@@ -1,0 +1,55 @@
+<!--
+    Theme selections. Putting them here lets me select the #root element
+    with CSS selectors, so I don't need JavaScript for theme switching.
+-->
+<input name="theme" id="theme-catppuccin-mocha" type="radio" checked="true" hidden="true"></input>
+<input name="theme" id="theme-catppuccin-macchiato" type="radio" hidden="true"></input>
+<input name="theme" id="theme-catppuccin-frappe" type="radio" hidden="true"></input>
+<input name="theme" id="theme-catppuccin-latte" type="radio" hidden="true"></input>
+
+<!--
+    Activate page markers. Again, putting them here lets me select the
+    #root element with pure CSS, allowing for a kind of pure-CSS CSR.
+-->
+<a id="page-home" hidden="true"></a>
+<a id="page-projects" hidden="true"></a>
+<a id="page-blog" hidden="true"></a>
+<a id="page-settings" hidden="true"></a>
+
+<!--
+    The #root element is where all the actual content is placed.
+-->
+<div id="root">
+    <!-- Navbar -->
+    <div id="navbar">
+        <a href="#page-home" class="navbar-item">
+            <span class="navbar-icon material-symbols"> home </span>
+            <p class="navbar-label">Home</p>
+        </a>
+        <a href="#page-projects" class="navbar-item">
+            <span class="navbar-icon material-symbols"> browse </span>
+            <p class="navbar-label">Projects</p>
+        </a>
+        <a href="#page-blog" class="navbar-item">
+            <span class="navbar-icon material-symbols"> book </span>
+            <p class="navbar-label">Blog</p>
+        </a>
+        <a href="#page-settings" class="navbar-item" id="settings-icon">
+            <span class="navbar-icon material-symbols"> settings </span>
+        </a>
+    </div>
+
+    <!-- Pages -->
+    <div id="home-content" class="page">
+        INCLUDE(home.html)
+    </div>
+    <div id="projects-content" class="page">
+        INCLUDE(projects.html)
+    </div>
+    <div id="blog-content" class="page">
+        INCLUDE(blog.html)
+    </div>
+    <div id="settings-content" class="page">
+        INCLUDE(settings.html)
+    </div>
+</div>

@@ -1,98 +1,20 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="lmao.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightShard's Website</title>
+
+    <style>
+        INCLUDE(css/main.css)
+        INCLUDE(css/site-layout.css)
+    </style>
+
+    <script>
+        console.log(
+            "Oi, there's no JS here. Why are you opening the console?\nWait a second...",
+        );
+    </script>
 </head>
 
 <body>
-    <!--
-        Theme selections. Putting them here lets me select the #root element
-        with CSS selectors, so I don't need JavaScript for theme switching.
-    -->
-    <input name="theme" id="theme-catppuccin-mocha" type="radio" checked hidden />
-    <input name="theme" id="theme-catppuccin-macchiato" type="radio" hidden />
-    <input name="theme" id="theme-catppuccin-frappe" type="radio" hidden />
-    <input name="theme" id="theme-catppuccin-latte" type="radio" hidden />
-    
-    <!--
-        Activate page markers. Again, putting them here lets me select the
-        #root element with pure CSS, allowing for a kind of pure-CSS CSR.
-    -->
-    <a id="page-home" hidden></a>
-    <a id="page-projects" hidden></a>
-    <a id="page-blog" hidden></a>
-    <a id="page-settings" hidden></a>
-    
-    <!--
-        The #root element is where all the actual content is placed.
-    -->
-    <div id="root">
-        <div id="navbar">
-            <a href="#page-home" class="navbar-item">
-                <span class="navbar-icon material-symbols">
-                    home
-                </span>
-                <p class="navbar-label">
-                    Home
-                </p>
-            </a>
-            <a href="#page-projects" class="navbar-item">
-                <span class="navbar-icon material-symbols">
-                    browse
-                </span>
-                <p class="navbar-label">
-                    Projects
-                </p>
-            </a>
-            <a href="#page-blog" class="navbar-item">
-                <span class="navbar-icon material-symbols">
-                    book
-                </span>
-                <p class="navbar-label">
-                    Blog
-                </p>
-            </a>
-            <a href="#page-settings" class="navbar-item" id="settings-icon">
-                <span class="navbar-icon material-symbols">
-                    settings
-                </span>
-            </a>
-        </div>
-        
-        <div id="home-content" class="page">
-            <h1>Home</h1>
-            <p>mmm yes contentmmmyes</p>
-        </div>
-        
-        <div id="projects-content" class="page">
-            <h1>Projects</h1>
-            <p>no way thsi dude makes stuff?</p>
-        </div>
-        
-        <div id="blog-content" class="page">
-            <h1>Blog</h1>
-            <p>lipsum orum i dont speak latinum</p>
-        </div>
-        
-        <div id="settings-content" class="page">
-            <h1>Settings</h1>
-            <p>yo wtf??? settings?? fo real??????</p>
-            
-            <h2>Theme</h2>
-            <p>Award winning UX right here, these are all buttons:</p>
-            <label for="theme-catppuccin-mocha">Catppuccin Mocha</label><br>
-            <label for="theme-catppuccin-macchiato">Catppuccin Macchiato</label><br>
-            <label for="theme-catppuccin-frappe">Catppuccin Frappe</label><br>
-            <label for="theme-catppuccin-latte">Catppuccin Latte</label><br>
-            
-            <h2>Credits</h2>
-            <p>Starting this now so I don't forget when I actually put content here...</p>
-            <ul>
-                <li>Icons: <a href="https://fonts.google.com/icons">Material Symbols</a></li>
-                <li>Theme Colours: <a href="https://github.com/catppuccin/catppuccin">Catppuccin</a></li>
-            </ul>
-        </div>
-    </div>
+    INCLUDE(pages/main.html)
 </body>

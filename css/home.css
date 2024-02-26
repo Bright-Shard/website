@@ -1,0 +1,155 @@
+#home-content {
+    text-align: center;
+}
+
+#home-content .title {
+    font-size: 40px;
+    font-weight: 600;
+    height: 70px;
+
+    margin-top: 10%;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+
+    font-family: "Roboto Mono", monospace;
+}
+#home-content .title div {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: min-content;
+
+    display: flex;
+    flex-direction: row;
+}
+#home-content .title div p {
+    /* How many characters get printed per second */
+    --chars-per-second: 8;
+    /* How many times the cursor blinks at the end of the animation */
+    --blinking-count: 3;
+    --blinking-length: 1s;
+    /* How long the cursor spends blinking at the end of the message */
+    --blinking-total-length: calc(
+        var(--blinking-length) * var(--blinking-count)
+    );
+    /*
+        Note: `--chars`, `--prev-msgs`, and `--prev-chars` are defined way below this,
+        since they're defined on a per-message basis using element IDs
+    */
+
+    /* The number of seconds it takes to type the whole message */
+    --typing-length: calc(1s * calc(var(--chars) / var(--chars-per-second)));
+    /* How long the cursor spent typing and deleting previous messages */
+    --prev-typing: calc(2s * calc(var(--prev-chars) / var(--chars-per-second)));
+    /* How long the cursor spent in blinking animations during previous messages */
+    --prev-blinking: calc(var(--blinking-total-length) * var(--prev-msgs));
+
+    /* How long to wait for previous messages to finish before typing this one */
+    --typing-delay: calc(var(--prev-typing) + var(--prev-blinking));
+    --blinking-delay: calc(var(--typing-delay) + var(--typing-length));
+    --deleting-delay: calc(
+        var(--blinking-delay) + var(--blinking-total-length)
+    );
+
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+
+    /* Order: name duration timing-fn delay iteration-count direction fill-mode play-state */
+    animation:
+        typing var(--typing-length) steps(var(--chars)) var(--typing-delay) 1
+            normal forwards,
+        blinking var(--blinking-length) linear var(--blinking-delay)
+            var(--blinking-count) normal forwards,
+        deleting var(--typing-length) steps(var(--chars)) var(--deleting-delay)
+            1 normal forwards;
+
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+#home-content .title div:last-child p {
+    animation:
+        typing var(--typing-length) steps(var(--chars)) var(--typing-delay) 1
+            normal forwards,
+        blinking var(--blinking-length) linear var(--blinking-delay)
+            var(--blinking-count) normal forwards;
+}
+
+#home-greeting-1 {
+    --chars: 24;
+    --prev-chars: 0;
+    --prev-msgs: 0;
+}
+
+#home-greeting-2 {
+    --chars: 6;
+    --prev-chars: 24;
+    --prev-msgs: 1;
+}
+
+#home-greeting-3 {
+    --chars: 6;
+    --prev-chars: 30;
+    --prev-msgs: 2;
+}
+
+#home-greeting-4 {
+    --chars: 6;
+    --prev-chars: 36;
+    --prev-msgs: 3;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        border-right-color: var(--text);
+    }
+
+    to {
+        width: 100%;
+        border-right-color: transparent;
+    }
+
+    99% {
+        border-right-color: var(--text);
+    }
+}
+@keyframes blinking {
+    from {
+        border-right-color: var(--text);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+
+    /* Forces the cursor to toggle between visible/invisible in the middle, instead of fading slowly */
+    50% {
+        border-right-color: var(--text);
+    }
+    51% {
+        border-right-color: transparent;
+    }
+}
+@keyframes deleting {
+    from {
+        width: 100%;
+        border-right-color: var(--text);
+    }
+
+    to {
+        width: 0;
+        border-right-color: transparent;
+    }
+
+    99% {
+        border-right-color: var(--text);
+    }
+}

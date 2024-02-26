@@ -1,0 +1,27 @@
+#root {
+    --padding: 12px;
+    --gap: 5px;
+}
+
+:root {
+    --navbar-width: 75px;
+    --navbar-height: 0px;
+}
+
+#navbar {
+    width: var(--navbar-width);
+    height: 100%;
+    flex-direction: column;
+}
+
+#settings-icon {
+    position: absolute;
+    bottom: var(--padding);
+}
+#settings-icon > .navbar-icon {
+    font-size: 32px;
+    padding: 6px;
+}
+#settings-icon > .navbar-icon::before {
+    border-radius: calc(var(--rounding) * 2) !important;
+}
