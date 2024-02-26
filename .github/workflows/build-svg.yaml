@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build SVG
-        run: cd neosite/svg-builder; cargo r
+        run: cd builder; cargo r
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
