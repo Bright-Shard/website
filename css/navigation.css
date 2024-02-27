@@ -31,6 +31,7 @@
     gap: calc(var(--gap) * 2);
     padding: var(--padding);
 }
+
 #navbar .navbar-item {
     width: 48px;
     height: 48px;
@@ -41,15 +42,19 @@
     flex-direction: column;
     align-items: center;
 }
+
 #navbar .navbar-item:hover {
     cursor: pointer;
 }
+
 #navbar .navbar-item:hover > .navbar-icon {
     font-weight: 600;
 }
+
 #navbar .navbar-item:hover > .navbar-icon::before {
     opacity: var(--hover-opacity);
 }
+
 #navbar .navbar-item .navbar-icon {
     font-size: 24px;
     position: relative;
@@ -57,6 +62,7 @@
     transition-duration: var(--hover-animation-len);
     z-index: 0;
 }
+
 #navbar .navbar-item .navbar-icon::before {
     content: "";
     border-style: solid;
@@ -72,6 +78,7 @@
     transition-duration: var(--hover-animation-len);
     z-index: -1;
 }
+
 #navbar .navbar-item .navbar-label {
     font-size: 12px;
     margin: 0px;
@@ -97,6 +104,7 @@
     > .navbar-icon {
     font-variation-settings: "FILL" 1;
 }
+
 #page-projects:target
     ~ #root
     > #navbar
@@ -104,6 +112,7 @@
     > .navbar-icon::before {
     opacity: var(--press-opacity);
 }
+
 #page-projects:target ~ #root > #projects-content {
     display: block;
 }
@@ -115,6 +124,7 @@
     > .navbar-icon {
     font-variation-settings: "FILL" 1;
 }
+
 #page-blog:target
     ~ #root
     > #navbar
@@ -122,6 +132,7 @@
     > .navbar-icon::before {
     opacity: var(--press-opacity);
 }
+
 #page-blog:target ~ #root > #blog-content {
     display: block;
 }
@@ -133,6 +144,7 @@
     > .navbar-icon {
     font-variation-settings: "FILL" 1;
 }
+
 #page-settings:target
     ~ #root
     > #navbar
@@ -140,6 +152,7 @@
     > .navbar-icon::before {
     opacity: var(--press-opacity);
 }
+
 #page-settings:target ~ #root > #settings-content {
     display: block;
 }
@@ -153,6 +166,7 @@
     > .navbar-icon {
     font-variation-settings: "FILL" 0;
 }
+
 #page-projects:target
     ~ #root
     > #navbar
@@ -160,9 +174,11 @@
     > .navbar-icon::before {
     opacity: 0;
 }
+
 #page-projects:target ~ #root > #home-content {
     display: none;
 }
+
 #page-blog:target
     ~ #root
     > #navbar
@@ -170,6 +186,7 @@
     > .navbar-icon {
     font-variation-settings: "FILL" 0;
 }
+
 #page-blog:target
     ~ #root
     > #navbar
@@ -177,9 +194,11 @@
     > .navbar-icon::before {
     opacity: 0;
 }
+
 #page-blog:target ~ #root > #home-content {
     display: none;
 }
+
 #page-settings:target
     ~ #root
     > #navbar
@@ -187,6 +206,7 @@
     > .navbar-icon {
     font-variation-settings: "FILL" 0;
 }
+
 #page-settings:target
     ~ #root
     > #navbar
@@ -194,6 +214,7 @@
     > .navbar-icon::before {
     opacity: 0;
 }
+
 #page-settings:target ~ #root > #home-content {
     display: none;
 }
@@ -207,9 +228,11 @@
 #navbar > .navbar-item[href="#page-home"] > .navbar-icon {
     font-variation-settings: "FILL" 1;
 }
+
 #navbar > .navbar-item[href="#page-home"] > .navbar-icon::before {
     opacity: var(--press-opacity);
 }
+
 #home-content {
     display: block;
 }

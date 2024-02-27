@@ -1,7 +1,7 @@
 @layer defaults, widgets, overrides;
 
 @layer defaults {
-    INCLUDE(themes.css)
+    INCLUDE(themes.css) INCLUDE(site-layout.css)
 }
 
 @layer widgets {
