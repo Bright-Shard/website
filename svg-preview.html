@@ -3,8 +3,16 @@
         height: 100%;
     }
 </style>
-<link rel="stylesheet" href="style.css" />
-<!-- <img src="site.svg" width="900" height="500" /> -->
-<svg xmlns="http://www.w3.org/2000/svg" version="2.0">
+<map name="brightshard-dev-map">
+    <!-- TODO: Investigate if this can be used to get links working. Right now it looks like this can't modify the image. -->
+    <!-- <area shape="circle" coords="20,20,100" href="#page-projects" target="#brightshard-dev-svg" /> -->
+</map>
+<img id="brightshard-dev-svg" src="index.svg" width="900" height="500" usemap="#brightshard-dev-map" />
+<!-- <svg xmlns="http://www.w3.org/2000/svg" version="2.0">
     <use href="site.svg#site">
-</svg>
+</svg> -->
+
+<!-- <picture width="900" height="500">
+    <source srcset="site.svg" type="image/svg+xml" />
+    <img src="site.svg" />
+</picture> -->

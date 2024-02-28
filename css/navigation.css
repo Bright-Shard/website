@@ -30,59 +30,59 @@
     align-items: center;
     gap: calc(var(--gap) * 2);
     padding: var(--padding);
-}
 
-#navbar .navbar-item {
-    width: 48px;
-    height: 48px;
-    text-decoration-line: none;
-    color: var(--text);
+    .navbar-item {
+        width: 48px;
+        height: 48px;
+        text-decoration-line: none;
+        color: var(--text);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-#navbar .navbar-item:hover {
-    cursor: pointer;
-}
+        .navbar-label {
+            font-size: 12px;
+            margin: 0px;
+            margin-top: 5px;
+        }
 
-#navbar .navbar-item:hover > .navbar-icon {
-    font-weight: 600;
-}
+        .navbar-icon {
+            font-size: 24px;
+            position: relative;
+            padding: 2px 12px;
+            transition-duration: var(--hover-animation-len);
+            z-index: 0;
 
-#navbar .navbar-item:hover > .navbar-icon::before {
-    opacity: var(--hover-opacity);
-}
+            &::before {
+                content: "";
+                border-style: solid;
+                border-width: 0px;
+                border-radius: var(--rounding);
+                background-color: var(--surface-2);
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                transition-duration: var(--hover-animation-len);
+                z-index: -1;
+            }
+        }
 
-#navbar .navbar-item .navbar-icon {
-    font-size: 24px;
-    position: relative;
-    padding: 2px 12px;
-    transition-duration: var(--hover-animation-len);
-    z-index: 0;
-}
+        &:hover {
+            cursor: pointer;
 
-#navbar .navbar-item .navbar-icon::before {
-    content: "";
-    border-style: solid;
-    border-width: 0px;
-    border-radius: var(--rounding);
-    background-color: var(--surface-2);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    transition-duration: var(--hover-animation-len);
-    z-index: -1;
-}
+            .navbar-icon {
+                font-weight: 600;
 
-#navbar .navbar-item .navbar-label {
-    font-size: 12px;
-    margin: 0px;
-    margin-top: 5px;
+                &::before {
+                    opacity: var(--hover-opacity);
+                }
+            }
+        }
+    }
 }
 
 /*
@@ -97,126 +97,60 @@
     leading to a lot of repeated/very similar code.
 */
 
-#page-projects:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-projects"]
-    > .navbar-icon {
-    font-variation-settings: "FILL" 1;
-}
+#page-projects:target ~ #root {
+    #navbar > .navbar-item[href="#page-projects"] > .navbar-icon {
+        font-variation-settings: "FILL" 1;
 
-#page-projects:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-projects"]
-    > .navbar-icon::before {
-    opacity: var(--press-opacity);
-}
+        &::before {
+            opacity: var(--press-opacity);
+        }
+    }
 
-#page-projects:target ~ #root > #projects-content {
-    display: block;
+    #projects-content {
+        display: block;
+    }
 }
+#page-blog:target ~ #root {
+    #navbar > .navbar-item[href="#page-blog"] > .navbar-icon {
+        font-variation-settings: "FILL" 1;
 
-#page-blog:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-blog"]
-    > .navbar-icon {
-    font-variation-settings: "FILL" 1;
+        &::before {
+            opacity: var(--press-opacity);
+        }
+    }
+
+    #blog-content {
+        display: block;
+    }
 }
+#page-settings:target ~ #root {
+    #navbar > .navbar-item[href="#page-settings"] > .navbar-icon {
+        font-variation-settings: "FILL" 1;
 
-#page-blog:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-blog"]
-    > .navbar-icon::before {
-    opacity: var(--press-opacity);
-}
+        &::before {
+            opacity: var(--press-opacity);
+        }
+    }
 
-#page-blog:target ~ #root > #blog-content {
-    display: block;
-}
-
-#page-settings:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-settings"]
-    > .navbar-icon {
-    font-variation-settings: "FILL" 1;
-}
-
-#page-settings:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-settings"]
-    > .navbar-icon::before {
-    opacity: var(--press-opacity);
-}
-
-#page-settings:target ~ #root > #settings-content {
-    display: block;
+    #settings-content {
+        display: block;
+    }
 }
 
 /* Prevent home from being active while another page is */
 
-#page-projects:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-home"]
-    > .navbar-icon {
-    font-variation-settings: "FILL" 0;
-}
+#page-projects:target, #page-blog:target, #page-settings:target {
+    ~ #root > #navbar > .navbar-item[href="#page-home"] > .navbar-icon {
+        font-variation-settings: "FILL" 0;
 
-#page-projects:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-home"]
-    > .navbar-icon::before {
-    opacity: 0;
-}
+        &::before {
+            opacity: 0;
+        }
+    }
 
-#page-projects:target ~ #root > #home-content {
-    display: none;
-}
-
-#page-blog:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-home"]
-    > .navbar-icon {
-    font-variation-settings: "FILL" 0;
-}
-
-#page-blog:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-home"]
-    > .navbar-icon::before {
-    opacity: 0;
-}
-
-#page-blog:target ~ #root > #home-content {
-    display: none;
-}
-
-#page-settings:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-home"]
-    > .navbar-icon {
-    font-variation-settings: "FILL" 0;
-}
-
-#page-settings:target
-    ~ #root
-    > #navbar
-    > .navbar-item[href="#page-home"]
-    > .navbar-icon::before {
-    opacity: 0;
-}
-
-#page-settings:target ~ #root > #home-content {
-    display: none;
+    ~ #root > #home-content {
+        display: none;
+    }
 }
 
 /*
@@ -227,10 +161,10 @@
 */
 #navbar > .navbar-item[href="#page-home"] > .navbar-icon {
     font-variation-settings: "FILL" 1;
-}
 
-#navbar > .navbar-item[href="#page-home"] > .navbar-icon::before {
-    opacity: var(--press-opacity);
+    &::before {
+        opacity: var(--press-opacity);
+    }
 }
 
 #home-content {

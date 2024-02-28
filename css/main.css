@@ -1,15 +1,15 @@
 @layer defaults, widgets, overrides;
 
 @layer defaults {
-    INCLUDE(themes.css) INCLUDE(site-layout.css)
+    #!INCLUDE(themes.css) #!INCLUDE(site-layout.css)
 }
 
 @layer widgets {
-    INCLUDE(navigation.css)
+    #!INCLUDE(navigation.css)
 }
 
 @layer overrides {
-    INCLUDE(home.css)
+    #!INCLUDE(home.css)
 }
 
 @layer defaults {
@@ -73,7 +73,8 @@ a {
         font-family: "Material Symbols";
         font-style: normal;
         font-weight: 100 700;
-        src: url(fonts/material-icons.woff2) format("woff2");
+        /* src: url(fonts/material-icons.woff2) format("woff2"); */
+        src: url("data:font/woff2;base64,#!INCLUDE_BASE64(../fonts/material-icons.woff2)") format("woff2");
     }
 
     .material-symbols,
@@ -94,17 +95,17 @@ a {
         font-variation-settings:
             'wght' 400,
             'GRAD' 0,
-            'opsz' 24
+            'opsz' 24;
     }
 
     .material-symbols {
         font-variation-settings:
-            'FILL' 0
+            'FILL' 0;
     }
 
     .material-symbols-filled {
         font-variation-settings:
-            'FILL' 1
+            'FILL' 1;
     }
 
     /* Roboto Flex (also stolen from Google's CDN) */
@@ -112,73 +113,10 @@ a {
     @font-face {
         font-family: "Roboto Flex";
         font-style: normal;
-        font-weight: 100;
+        font-weight: 100 800;
         font-stretch: 100%;
         font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Flex";
-        font-style: normal;
-        font-weight: 200;
-        font-stretch: 100%;
-        font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Flex";
-        font-style: normal;
-        font-weight: 300;
-        font-stretch: 100%;
-        font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Flex";
-        font-style: normal;
-        font-weight: 400;
-        font-stretch: 100%;
-        font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Flex";
-        font-style: normal;
-        font-weight: 500;
-        font-stretch: 100%;
-        font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Flex";
-        font-style: normal;
-        font-weight: 600;
-        font-stretch: 100%;
-        font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Flex";
-        font-style: normal;
-        font-weight: 700;
-        font-stretch: 100%;
-        font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Flex";
-        font-style: normal;
-        font-weight: 800;
-        font-stretch: 100%;
-        font-display: swap;
-        src: url(fonts/roboto-flex.woff2) format("woff2");
+        src: url("data:font/woff2;base64,#!INCLUDE_BASE64(../fonts/roboto-flex.woff2)") format("woff2");
     }
 
     /* Roboto Mono (also stolen from Google's CDN) */
@@ -186,56 +124,8 @@ a {
     @font-face {
         font-family: "Roboto Mono";
         font-style: normal;
-        font-weight: 100;
+        font-weight: 100 700;
         font-display: swap;
-        src: url(fonts/roboto-mono.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Mono";
-        font-style: normal;
-        font-weight: 200;
-        font-display: swap;
-        src: url(fonts/roboto-mono.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Mono";
-        font-style: normal;
-        font-weight: 300;
-        font-display: swap;
-        src: url(fonts/roboto-mono.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Mono";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(fonts/roboto-mono.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Mono";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: url(fonts/roboto-mono.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Mono";
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap;
-        src: url(fonts/roboto-mono.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "Roboto Mono";
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: url(fonts/roboto-mono.woff2) format("woff2");
+        src: url("data:font/woff2;base64,#!INCLUDE_BASE64(../fonts/roboto-mono.woff2)") format("woff2");
     }
 }
