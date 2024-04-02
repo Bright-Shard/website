@@ -1,0 +1,47 @@
+.divider {
+    width: calc(100% - var(--gap));
+    height: 1px;
+    background-color: var(--text);
+    margin: var(--gap) 0px;
+}
+
+.button-outlined {
+    border-radius: 16px;
+    border-color: var(--surface-2);
+    border-style: solid;
+    border-width: 1px;
+
+    text-decoration: none;
+    padding: calc(var(--padding) / 2) var(--padding);
+    transition-duration: var(--hover-animation-len);
+    display: inline-block;
+
+    &:hover {
+        background-color: var(--surface-1);
+    }
+}
+.button-filled {
+    border-radius: 16px;
+    
+    text-decoration: none;
+    padding: calc(var(--padding) / 2) var(--padding);
+    transition-duration: var(--hover-animation-len);
+    display: inline-block;
+    background-color: var(--surface-1);
+
+    &:hover {
+        background-color: var(--surface-2);
+    }
+}
+.button-text {
+    border-radius: 16px;
+    
+    text-decoration: none;
+    padding: calc(var(--padding) / 2) var(--padding);
+    transition-duration: var(--hover-animation-len);
+    display: inline-block;
+
+    &:hover {
+        background-color: var(--surface-1);
+    }
+}

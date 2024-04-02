@@ -5,9 +5,9 @@
     This is only used for the actual website, not the SVG version. It breaks in SVGs.
 
     Screen size classes:
-    x<600         small
-    600<=x<840    medium
-    x>=840        large
+    x<600         small (phone)
+    600<=x<840    medium (tablet)
+    x>=840        large (desktop)
     Taken from Material 3:
     https://m3.material.io/foundations/layout/applying-layout/window-size-classes#4ee6b7bb-864a-440c-9903-f738cc94fd58
 */
@@ -95,5 +95,30 @@
                 border-radius: calc(var(--rounding) * 2) !important;
             }
         }
+    }
+}
+
+/* Fonts - the site imports them, the SVG embeds them as base64 */
+@layer defaults {
+    @font-face {
+        font-family: "Material Symbols";
+        font-style: normal;
+        font-weight: 100 700;
+        src: url("fonts/material-icons.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "Roboto Flex";
+        font-style: normal;
+        font-weight: 100 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url("fonts/roboto-flex.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "Roboto Mono";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: swap;
+        src: url("fonts/roboto-mono.woff2") format("woff2");
     }
 }

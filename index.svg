@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="2.0">
     <foreignObject width="100vw" height="100vh" id="site">
         <div xmlns="http://www.w3.org/1999/xhtml" version="5.2" width="100vw" height="100vh">
-            <link rel="stylesheet" href="data:text/css;base64,#!BASE64(#!INCLUDE(css/main.css))" />
-            #!INCLUDE(pages/main.html)
+            <link rel="stylesheet" href="data:text/css;base64,!#BASE64(!#INCLUDE(css/main.css))" />
+            <link rel="stylesheet" href="data:text/css;base64,!#BASE64(!#INCLUDE(css/pages.css))" />
+            <link rel="stylesheet" href="data:text/css;base64,!#BASE64(!#INCLUDE(css/svg-layout.css))" />
+            !#INCLUDE(pages/main.html)
         </div>
     </foreignObject>
 </svg>

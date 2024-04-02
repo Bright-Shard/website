@@ -5,6 +5,7 @@ use {
 };
 
 const CRATE_ROOT: &str = env!("CARGO_MANIFEST_DIR");
+mod woff2;
 
 fn main() {
     let crate_root = Path::new(CRATE_ROOT);
@@ -18,7 +19,10 @@ fn main() {
     compile("index.svg", root, &out_dir);
     compile("index.html", root, &out_dir);
     compile("svg-preview.html", root, &out_dir);
-    compile("main.css", &root.join("css"), &out_dir);
+
+    let css_root = &root.join("css");
+    compile("main.css", css_root, &out_dir);
+    compile("site-layout.css", css_root, &out_dir);
 
     let fonts_out = out_dir.join("fonts");
     if !fonts_out.exists() {
@@ -78,7 +82,7 @@ fn parse_file(file: &Path, root: &Path) -> String {
 
 /// Attempts to find a single macro in `src`.
 fn find_macro(src: &str) -> Option<Macro> {
-    if let Some(macro_idx) = src.find("#!") {
+    if let Some(macro_idx) = src.find("!#") {
         let macro_src = &src[macro_idx..];
         let args_start_idx = macro_idx + macro_src.find('(').unwrap();
         let mut args_end_idx = 0;

@@ -25,3 +25,31 @@
 #settings-icon > .navbar-icon::before {
     border-radius: calc(var(--rounding) * 2) !important;
 }
+
+/* Fonts - the site imports them, the SVG embeds them as base64 */
+@layer defaults {
+    @font-face {
+        font-family: "Material Symbols";
+        font-style: normal;
+        font-weight: 100 700;
+        src: url("data:font/woff2;base64,!#INCLUDE_BASE64(../fonts/material-icons.woff2)")
+            format("woff2");
+    }
+    @font-face {
+        font-family: "Roboto Flex";
+        font-style: normal;
+        font-weight: 100 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url("data:font/woff2;base64,!#INCLUDE_BASE64(../fonts/roboto-flex.woff2)")
+            format("woff2");
+    }
+    @font-face {
+        font-family: "Roboto Mono";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: swap;
+        src: url("data:font/woff2;base64,!#INCLUDE_BASE64(../fonts/roboto-mono.woff2)")
+            format("woff2");
+    }
+}
