@@ -1,6 +1,7 @@
 #root {
     --padding: 12px;
     --gap: 5px;
+    height: 500px;
 }
 
 :root {
