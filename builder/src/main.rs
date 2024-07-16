@@ -19,6 +19,7 @@ fn main() {
     compile("index.svg", root, &out_dir);
     compile("index.html", root, &out_dir);
     compile("svg-preview.html", root, &out_dir);
+    compile("pgp-key.txt", root, &out_dir);
 
     let css_root = &root.join("css");
     compile("main.css", css_root, &out_dir);
@@ -30,7 +31,9 @@ fn main() {
     }
     for font_file in root.join("fonts").read_dir().unwrap() {
         let font_file = font_file.unwrap();
-        fs::copy(font_file.path(), fonts_out.join(font_file.file_name())).unwrap();
+        let file_name = font_file.file_name();
+        println!("Copying font {file_name:?}");
+        fs::copy(font_file.path(), fonts_out.join(file_name)).unwrap();
     }
 }
 
@@ -76,6 +79,7 @@ fn parse_file(file: &Path, root: &Path) -> String {
                 .to_string()
         }
         "css" => minifier::css::minify(&output).unwrap().to_string(),
+        "txt" => output,
         other => panic!("Unknown file extension `{other}`."),
     }
 }
