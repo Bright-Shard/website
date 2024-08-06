@@ -20,6 +20,7 @@ fn main() {
     compile("index.html", root, &out_dir);
     compile("svg-preview.html", root, &out_dir);
     compile("pgp-key.txt", root, &out_dir);
+    compile("ssh-key.txt", root, &out_dir);
 
     let css_root = &root.join("css");
     compile("main.css", css_root, &out_dir);

@@ -12,13 +12,13 @@
     https://m3.material.io/foundations/layout/applying-layout/window-size-classes#4ee6b7bb-864a-440c-9903-f738cc94fd58
 */
 
-#root {
+body {
     --padding: 12px;
     --gap: 5px;
 }
 
 @media (max-width: 599px) {
-    :root {
+    body {
         --navbar-width: 0px;
         --navbar-height: 75px;
     }
@@ -31,7 +31,7 @@
         flex-direction: row;
     }
 
-    #settings-icon {
+    #settings {
         position: absolute;
         right: var(--padding);
 
@@ -47,7 +47,7 @@
 }
 
 @media (min-width: 600px) and (max-width: 839px) {
-    :root {
+    body {
         --navbar-width: 75px;
         --navbar-height: 0px;
     }
@@ -58,7 +58,7 @@
         flex-direction: column;
     }
 
-    #settings-icon {
+    #settings {
         position: absolute;
         bottom: var(--padding);
 
@@ -73,7 +73,7 @@
     }
 }
 @media (min-width: 839px) {
-    :root {
+    body {
         --navbar-width: 75px;
         --navbar-height: 0px;
     }
@@ -84,7 +84,7 @@
         flex-direction: column;
     }
 
-    #settings-icon {
+    #settings {
         margin-top: auto;
 
         & > .navbar-icon {
@@ -104,7 +104,7 @@
         font-family: "Material Symbols";
         font-style: normal;
         font-weight: 100 700;
-        src: url("fonts/material-icons.trimmed.woff2") format("woff2");
+        src: url("fonts/material-icons.woff2") format("woff2");
     }
     @font-face {
         font-family: "Roboto Flex";

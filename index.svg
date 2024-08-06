@@ -4,7 +4,10 @@
             <link rel="stylesheet" href="data:text/css;base64,!#BASE64(!#INCLUDE(css/main.css))" />
             <link rel="stylesheet" href="data:text/css;base64,!#BASE64(!#INCLUDE(css/pages.css))" />
             <link rel="stylesheet" href="data:text/css;base64,!#BASE64(!#INCLUDE(css/svg-layout.css))" />
+
+            <body>
             !#INCLUDE(pages/main.html)
+            </body>
         </div>
     </foreignObject>
 </svg>

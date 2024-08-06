@@ -7,7 +7,7 @@
 # Source: https://stackoverflow.com/questions/64614572/creating-a-material-icons-subset
 
 # The icons to keep in the font
-ICONS="home browse book terminal sdk settings"
+ICONS="home browse book terminal sdk settings key"
 
 # Folder locations
 ROOT=$(dirname $0)/..

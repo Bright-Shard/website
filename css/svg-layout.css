@@ -1,10 +1,8 @@
-#root {
+body {
     --padding: 12px;
     --gap: 5px;
     height: 500px;
-}
 
-:root {
     --navbar-width: 75px;
     --navbar-height: 0px;
 }

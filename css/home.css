@@ -1,6 +1,6 @@
-#home-content {
+#home + .page {
     text-align: center;
-    
+
     .title {
         margin-top: 10%;
         margin-bottom: 0;
