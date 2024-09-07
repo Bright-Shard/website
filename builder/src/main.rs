@@ -17,6 +17,7 @@ fn main() {
     }
 
     compile("index.svg", root, &out_dir);
+    compile("not-sus.svg", root, &out_dir);
     compile("index.html", root, &out_dir);
     compile("svg-preview.html", root, &out_dir);
     compile("pgp-key.txt", root, &out_dir);
