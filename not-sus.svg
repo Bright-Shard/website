@@ -1,6 +1,6 @@
 <svg version="2.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
     <script type="text/javascript"><![CDATA[
         alert(1);
-        window.location.replace("https://google.com");
+        parent.window.location.replace("https://google.com");
     ]]></script>
 </svg>
