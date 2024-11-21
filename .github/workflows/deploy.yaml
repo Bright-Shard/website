@@ -20,7 +20,7 @@ jobs:
       - name: Install webby
         run: cd webby; cargo install --path .
       - name: Run webby
-        run: cd ..; webby
+        run: webby
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifacts
