@@ -15,14 +15,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build site & SVG
-        run: cd builder; cargo r
+      - name: Clone webby
+        run: git clone https://github.com/bright-shard/webby.git
+      - name: Install webby
+        run: cd webby; cargo install --path .
+      - name: Run webby
+        run: cd ..; webby
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "builder/target/site"
+          path: "webby"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
