@@ -1,9 +1,9 @@
 <!-- Themes -->
 <div id="themes">
-    <input name="theme" id="catppuccin-mocha" type="radio" checked="true"></input>
-    <input name="theme" id="catppuccin-macchiato" type="radio"></input>
-    <input name="theme" id="catppuccin-frappe" type="radio"></input>
-    <input name="theme" id="catppuccin-latte" type="radio"></input>
+    <input name="theme" id="catppuccin-mocha" type="radio" checked="true" />
+    <input name="theme" id="catppuccin-macchiato" type="radio" />
+    <input name="theme" id="catppuccin-frappe" type="radio" />
+    <input name="theme" id="catppuccin-latte" type="radio" />
 </div>
 
 <!-- Navbar & pages -->
@@ -12,49 +12,56 @@
         <span class="navbar-icon material-symbols">home</span>
         <p class="navbar-label">Home</p>
     </a>
-    <div class="page">
-        !#INCLUDE(home.html)
-    </div>
+    <div class="page">#!INCLUDE(home.html)</div>
 
     <a id="projects" href="#projects" class="navbar-item">
         <span class="navbar-icon material-symbols">browse</span>
         <p class="navbar-label">Projects</p>
     </a>
-    <div class="page">
-        !#INCLUDE(projects.html)
-    </div>
+    <div class="page">#!INCLUDE(projects.html)</div>
 
-    <a id="blog" href="#blog" class="navbar-item">
+    <a id="blog-btn" href="#blog" class="navbar-item">
         <span class="navbar-icon material-symbols">book</span>
         <p class="navbar-label">Blog</p>
     </a>
-    <div class="page">
-        !#INCLUDE(blog.html)
-    </div>
+    <div class="page">#!INCLUDE(blog.html)</div>
 
     <a id="pgp-key" href="#pgp-key" class="navbar-item">
         <span class="navbar-icon material-symbols">key</span>
         <p class="navbar-label">Keys</p>
     </a>
-    <div class="page" style="text-align: center;">
-        <h1>PGP Key</h1>
+    <div class="page" style="text-align: center">
+        <h1 class="title">PGP Key</h1>
+        <a href="/pgp-key.txt">(link)</a>
         <code>
-            <pre>!#INCLUDE(../pgp-key.txt)</pre>
+            <pre>#!INCLUDE(../pgp-key.txt)</pre>
         </code>
 
-        <h1>SSH Key</h1>
+        <h1 class="title">SSH Key</h1>
+        <a href="/ssh-key.txt">(link)</a>
         <code>
-            <pre>!#INCLUDE(../ssh-key.txt)</pre>
+            <pre>#!INCLUDE(../ssh-key.txt)</pre>
         </code>
     </div>
 
     <div class="divider"></div>
 
-    <a href="https://osdev.rocks" class="navbar-item" target="_blank" rel="noopener noreferrer" style="margin-bottom: var(--padding);">
+    <a
+        href="https://osdev.rocks"
+        class="navbar-item"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="margin-bottom: var(--padding)"
+    >
         <span class="navbar-icon material-symbols">terminal</span>
         <p class="navbar-label">OSDev Rocks</p>
     </a>
-    <a href="https://scaffolding.brightshard.dev" class="navbar-item" target="_blank" rel="noopener noreferrer">
+    <a
+        href="https://scaffolding.brightshard.dev"
+        class="navbar-item"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
         <span class="navbar-icon material-symbols">sdk</span>
         <p class="navbar-label">Scaffolding</p>
     </a>
@@ -62,7 +69,5 @@
     <a id="settings" href="#settings" class="navbar-item">
         <span class="navbar-icon material-symbols">settings</span>
     </a>
-    <div class="page">
-        !#INCLUDE(settings.html)
-    </div>
+    <div class="page">#!INCLUDE(settings.html)</div>
 </div>

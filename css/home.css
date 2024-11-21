@@ -35,15 +35,23 @@
                 */
 
                 /* The number of seconds it takes to type the whole message */
-                --typing-length: calc(1s * calc(var(--chars) / var(--chars-per-second)));
+                --typing-length: calc(
+                    1s * calc(var(--chars) / var(--chars-per-second))
+                );
                 /* How long the cursor spent typing and deleting previous messages */
-                --prev-typing: calc(2s * calc(var(--prev-chars) / var(--chars-per-second)));
+                --prev-typing: calc(
+                    2s * calc(var(--prev-chars) / var(--chars-per-second))
+                );
                 /* How long the cursor spent in blinking animations during previous messages */
-                --prev-blinking: calc(var(--blinking-total-length) * var(--prev-msgs));
+                --prev-blinking: calc(
+                    var(--blinking-total-length) * var(--prev-msgs)
+                );
 
                 /* How long to wait for previous messages to finish before typing this one */
                 --typing-delay: calc(var(--prev-typing) + var(--prev-blinking));
-                --blinking-delay: calc(var(--typing-delay) + var(--typing-length));
+                --blinking-delay: calc(
+                    var(--typing-delay) + var(--typing-length)
+                );
                 --deleting-delay: calc(
                     var(--blinking-delay) + var(--blinking-total-length)
                 );
@@ -55,12 +63,12 @@
 
                 /* Order: name duration timing-fn delay iteration-count direction fill-mode play-state */
                 animation:
-                    typing var(--typing-length) steps(var(--chars)) var(--typing-delay) 1
-                        normal forwards,
+                    typing var(--typing-length) steps(var(--chars))
+                        var(--typing-delay) 1 normal forwards,
                     blinking var(--blinking-length) linear var(--blinking-delay)
                         var(--blinking-count) normal forwards,
-                    deleting var(--typing-length) steps(var(--chars)) var(--deleting-delay)
-                        1 normal forwards;
+                    deleting var(--typing-length) steps(var(--chars))
+                        var(--deleting-delay) 1 normal forwards;
 
                 border-right-color: transparent;
                 border-right-style: solid;
@@ -69,8 +77,8 @@
 
             &:last-child p {
                 animation:
-                    typing var(--typing-length) steps(var(--chars)) var(--typing-delay) 1
-                        normal forwards,
+                    typing var(--typing-length) steps(var(--chars))
+                        var(--typing-delay) 1 normal forwards,
                     blinking var(--blinking-length) linear var(--blinking-delay)
                         var(--blinking-count) normal forwards;
             }

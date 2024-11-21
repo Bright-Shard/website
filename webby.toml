@@ -1,0 +1,25 @@
+[[target]]
+path = "pgp-key.txt"
+
+[[target]]
+path = "ssh-key.txt"
+
+[[target]]
+path = "fonts"
+
+[[target]]
+path = "index.html"
+
+[[target]]
+path = "embedded.html"
+
+[[target]]
+path = "index.svg"
+filetype = "html"
+
+[[target]]
+path = "blog"
+mode = "compile"
+
+[[target]]
+path = "css/main.css"

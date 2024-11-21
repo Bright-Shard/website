@@ -23,7 +23,7 @@
     The home page is highlighted by default. This works by making the home page
     active when no other navbar item is selected.
 */
-body:not(:has(.navbar-item:target)) #home {
+body:not(:has(*:target)) #home {
     .navbar-icon {
         font-variation-settings: "FILL" 1;
 

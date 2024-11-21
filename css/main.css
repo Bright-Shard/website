@@ -1,15 +1,18 @@
 @layer defaults, widgets, overrides;
 
 @layer defaults {
-    !#INCLUDE(themes.css)
+    #!INCLUDE(themes.css)
 }
 
 @layer widgets {
-    !#INCLUDE(widgets/navigation.css) !#INCLUDE(widgets/other.css) !#INCLUDE(widgets/card.css)
+    #!INCLUDE(widgets/navigation.css)
+    #!INCLUDE(widgets/other.css)
+    #!INCLUDE(widgets/card.css)
 }
 
 @layer overrides {
-    !#INCLUDE(home.css)
+    #!INCLUDE(home.css)
+    #!INCLUDE(blog.css)
 }
 
 @layer defaults {
@@ -52,6 +55,7 @@
         width: 100%;
         height: 100%;
         margin: 0px;
+        line-height: 1.4;
 
         background-color: var(--background);
         color: var(--text);
@@ -68,6 +72,18 @@
 
     a {
         color: unset;
+        transition-duration: 0.4s;
+
+        &:hover {
+            color: var(--subtext-0);
+        }
+    }
+
+    blockquote {
+        border-left-width: 3px;
+        border-left-color: var(--text);
+        border-left-style: solid;
+        padding-left: var(--gap);
     }
 
     .material-symbols,
