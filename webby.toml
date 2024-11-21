@@ -18,8 +18,4 @@ path = "index.svg"
 filetype = "html"
 
 [[target]]
-path = "blog"
-mode = "compile"
-
-[[target]]
 path = "css/main.css"
