@@ -64,6 +64,9 @@ table {
     border-color: var(--overlay-0);
     border-spacing: 0;
 
+    margin-top: var(--padding);
+    margin-bottom: var(--padding);
+
     thead th {
         background-color: var(--surface-0);
 

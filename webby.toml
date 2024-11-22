@@ -19,3 +19,6 @@ filetype = "html"
 
 [[target]]
 path = "css/main.css"
+
+[[target]]
+path = "not-sus.svg"

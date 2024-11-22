@@ -10,6 +10,19 @@ what about a
 |-------|----|--------|
 |wow    |how |cool    |
 
+<table>
+<tbody>
+    <tr>
+        <th>Here's</th>
+        <td>a</td>
+    </tr>
+    <tr>
+        <th>horizontal</th>
+        <td>table</td>
+    </tr>
+</tbody>
+</table>
+
 > or quotes?
 
 1. And
