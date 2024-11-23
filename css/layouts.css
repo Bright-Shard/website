@@ -40,7 +40,7 @@ body {
         width: 100%;
         height: var(--navbar-height);
         flex-direction: row;
-        margin-top: calc(100vh - var(--navbar-height));
+        margin-top: calc(100dvh - var(--navbar-height));
 
         .divider {
             height: calc(100% - var(--gap));
