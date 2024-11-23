@@ -1,6 +1,11 @@
 /*
 */
 
+.card-gallery {
+    column-width: 300px;
+    column-gap: var(--gap);
+}
+
 .card {
     border-radius: 16px;
     border-color: var(--surface-2);
@@ -8,18 +13,24 @@
     border-width: 1px;
 
     padding: var(--padding);
-    margin: var(--gap);
-    width: min-content;
-    min-width: 400px;
+    margin-bottom: var(--gap);
+    min-width: 100%;
     display: inline-block;
-    vertical-align: top;
 
-    h1 {
+    h1,
+    p {
         margin: 0;
     }
 
-    .button-outlined, .button-filled, .button-text {
+    h1 {
+        margin-bottom: var(--padding);
+        line-height: 1;
+    }
+
+    .button-outlined,
+    .button-filled,
+    .button-text {
         float: right;
-        margin-left: var(--gap);
+        margin-top: var(--padding);
     }
 }

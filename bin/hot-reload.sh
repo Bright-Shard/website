@@ -18,5 +18,6 @@ ROOT=$(dirname $0)/..
 # $ROOT: watch all files in this repo
 inotifywait -m -r -e close_write -e delete --exclude $ROOT/webby $ROOT |
     while read path action file; do
+        clear
         webby
     done

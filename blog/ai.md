@@ -2,29 +2,44 @@
 
 There's been an insane spike in AI usage over the past years. It's to the point that I don't think I even need to explain that sentence - you, dear reader, know it just as well as I do, because it's *everywhere*.
 
-But, just in case you did want some numbers:
+...though, if you do want some numbers:
 - ChatGPT's number of weekly users [doubled from 100 million to 200 million users](https://www.theverge.com/2024/8/29/24231685/openai-chatgpt-200-million-weekly-users) between November of 2023 and August of 2024 (less than a year!).
 - ChatGPT released in 2022. In the *two years* since then, there have been at least 4 more LLMs released (Google's [Gemini](https://gemini.google.com), Microsoft's [Copilot](https://copilot.microsoft.com), Anthropic's [Claude](https://claude.ai), Facebook's [LLaMA](https://www.llama.com/), and probably more I've managed to miss).
 - By March of 2023, according to Pew Research, nearly [60% of US adults](https://www.pewresearch.org/short-reads/2023/05/24/a-majority-of-americans-have-heard-of-chatgpt-but-few-have-tried-it-themselves/) had heard of ChatGPT (and let's be honest - getting 60% of US adults to know about *anything* is impressive!).
 
 I've even had a teacher *encourage AI usage* on assignments. AI has grown explosively.
 
+> **Note:**
+>
+> Technically, using "AI" here is a bit of a misnomer. Artificial intelligence is an *incredibly* broad field, and I'm only really talking about one specific aspect of it: Commercial LLMs, the **L**arge **L**anguage **M**odels (like ChatGPT and Gemini) being developed commercially by companies. I'm still going to say AI in this post so it's easy to read, but I wanted to leave this disclaimer to remain accurate.
+
 
 
 # The Problem
 
-If it wasn't obvious from the title, this growth is *not good*, for several reasons:
+While it's cool to see a product spreading so rapidly, it's unfortunately a very problematic technology. There are *tons* if problems and questions with AI. Many of these problems aren't ones I'm going to address in this post, because they can get rather philosophical and lengthy - I'm not, for example, going to discuss if this technology is truly intelligent.
+
+Instead, I'm going to focus on more factual and objective problems - specifically, these three problems:
 
 1. AI is damaging to the environment, using frankly absurd amounts of water and power. Its power usage is also causing increases in carbon emissions.
-2. AI is not financially sustainable, and the companies that are developing it are losing money.
-3. AI companies are intentionally masking the costs of AI so they're not known to the public.
-4. AI companies are overpromising what AI will deliver, leading to dangerous misconceptions for us common folk.
+2. Companies are overselling the future of AI. It will not grow to meet their claims.
+3. AI is not financially sustainable, nor profitable. It is draining immense sums of money from our economy.
 
-There are other issues specifically around how AI is being created and used today - but, for this post, I'm *just* focusing on flaws in the technology behind AI.
 
-> **Note:**
->
-> Technically, using "AI" here is a bit of a misnomer. Artificial intelligence is an *incredibly* broad field, and I'm only really talking about one specific aspect of it: Commercial LLMs. LLMs are a specific type of artificial intelligence, and I'm only talking about the LLMs being developed by commercially by corporations. However, I'm still going to say AI in this blog because it's what most people consider AI.
+
+# I don't Care
+
+Yeah, these problems sound large and abstract - too big to really matter to you and me and our daily lives.
+
+For a while, I agreed. I actually thought this tech would just breeze over and we'd move on after a bit. However, as time goes on, AI just keeps being integrated into more and more parts of our lives. So I've changed my mind - I've decided AI is very relevant to me, and to you, as well.
+
+AI is relevant to you because companies are forcing it onto you. iOS, macOS, Android, and Windows are now all introducing (or planning to introduce) AI technology directly onto our smartphones and computers. This technology - which wasn't even relevant until the release of ChatGPT 2 years ago - is now being shoved into everything from [web searches](https://blog.google/products/search/generative-ai-google-search-may-2024/) to [app notifications](https://support.apple.com/guide/iphone/summarize-notifications-reduce-interruptions-iph1fbe7d2b9/ios).
+
+AI is relevant to you because it's affecting the planet we live on and the economy we live in. As I'll show later in this post, AI is devouring water, electricity, and money at a faster rate than any technology we've seen before.
+
+AI is relevant to you because remaining ignorant on the topic allows companies to take advantage of you. For as long as people remain ignorant on the topic, companies will manipulate them by pushing more AI products. Doing so maintains hype, attracts potential customers, and draws in investors - all of which boost their precious profits. This process includes you.
+
+AI is relevant to you. You deserve to know its consequences.
 
 
 
@@ -87,7 +102,7 @@ The important thing to realise here is that the LLM's results depend entirely on
 >
 > If you want more of an explanation on how LLMs work, 3Blue1Brown has a great series on YouTube about it:
 >
-> <iframe width="560" height="315" src="https://www.youtube.com/embed/wjZofJX0v4M" title="YouTube video player" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+> <iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/wjZofJX0v4M" title="YouTube video player" frameborder="0"></iframe>
 
 Since AI needs tons of high-quality training data, that data comes from the internet - there's no other source that can provide such vast amounts of training data. The problem is that it appears training data is becoming increasingly scarce, because people are adding restrictions that make it illegal to use their content to train AI. According to a [recent study](https://www.dataprovenance.org/Consent_in_Crisis.pdf), many of the biggest websites that have been used to collect AI training data have restricted as much as 45% of their content (that's nearly *half*), an increase of over 500% from last year. The common sources for new AI training data are becoming less available - and they're becoming less available at a faster rate.
 

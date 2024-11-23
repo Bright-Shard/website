@@ -16,7 +16,7 @@
     padding: calc(var(--padding) / 2) var(--padding);
     transition-duration: var(--hover-animation-len);
     display: inline-block;
-    width: fit-content;
+    margin-left: var(--gap);
 
     &:hover {
         cursor: pointer;
@@ -35,6 +35,7 @@
     transition-duration: var(--hover-animation-len);
     display: inline-block;
     background-color: var(--surface-1);
+    margin-left: var(--gap);
 
     &:hover {
         background-color: var(--surface-2);
@@ -50,6 +51,7 @@
     padding: calc(var(--padding) / 2) var(--padding);
     transition-duration: var(--hover-animation-len);
     display: inline-block;
+    margin-left: var(--gap);
 
     &:hover {
         background-color: var(--surface-1);
@@ -57,15 +59,14 @@
 }
 
 table {
-    width: 100%;
+    width: calc(var(--content-width) - calc(var(--padding) * 4));
     border-style: solid;
     border-width: 1px;
     border-radius: 16px;
     border-color: var(--overlay-0);
     border-spacing: 0;
 
-    margin-top: var(--padding);
-    margin-bottom: var(--padding);
+    margin: var(--padding);
 
     thead th {
         background-color: var(--surface-0);

@@ -1,8 +1,6 @@
 .blog-post {
     display: none;
-
     font-size: 16px;
-    width: 600px;
     margin-left: auto;
     margin-right: auto;
 
@@ -14,38 +12,49 @@
         position: relative;
     }
 
-    & li {
-        margin-bottom: var(--padding);
+    li {
+        margin-bottom: var(--gap);
     }
 }
+
+#blog-footer {
+    .divider {
+        margin: calc(var(--padding) * 2) 0;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+/*
+    The blog footer is visible by default, we only hide it if the main blog
+    page is visible.
+*/
+#blog:target ~ #blog-footer {
+    display: none;
+}
+
+/*
+    Blog navigation logic
+
+    This uses the :target selector to make a blog post visible if it's selected.
+    It also highlights the blog button in the navigation bar when a blog post
+    is visible.
+*/
 .blog-post:target {
     display: block;
 }
-body:has(.blog-post:target) {
-    #blog-btn {
-        .navbar-icon {
-            font-variation-settings: "FILL" 1;
+body:has(.blog-post:target) #blog-btn {
+    .navbar-icon {
+        font-variation-settings: "FILL" 1;
 
-            &::before {
-                opacity: var(--press-opacity);
-            }
-        }
-
-        & + .page {
-            display: block;
+        &::before {
+            opacity: var(--press-opacity);
         }
     }
-}
-#blog:target ~ #blog-back-btn {
-    display: none;
-}
-#blog-post-selection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: var(--padding);
-}
-.blog-card {
-    max-width: 40%;
+
+    & + .page {
+        display: block;
+    }
 }

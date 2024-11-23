@@ -1,31 +1,12 @@
-body {
-    --padding: 12px;
-    --gap: 5px;
-    height: 500px;
+/*
+    Embeds fonts directly into the webpage as base64. This significantly
+    increases the total size of the webpage's file and prevents caching the
+    font files - basically, it's a terrible idea. The SVG and embedded HTML
+    builds of the site use this so they work offline without downloading remote
+    resources. This is needed for the SVG to work in an <img> tag, because when
+    it's in an <img> tag it's not allowed to download remote resources.
+*/
 
-    --navbar-width: 75px;
-    --navbar-height: 0px;
-}
-
-#navbar {
-    width: var(--navbar-width);
-    height: 100%;
-    flex-direction: column;
-}
-
-#settings-icon {
-    position: absolute;
-    bottom: var(--padding);
-}
-#settings-icon > .navbar-icon {
-    font-size: 32px;
-    padding: 6px;
-}
-#settings-icon > .navbar-icon::before {
-    border-radius: calc(var(--rounding) * 2) !important;
-}
-
-/* Fonts - the site imports them, the SVG embeds them as base64 */
 @layer defaults {
     @font-face {
         font-family: "Material Symbols";

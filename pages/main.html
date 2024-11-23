@@ -26,7 +26,7 @@
     </a>
     <div class="page">#!INCLUDE(blog.html)</div>
 
-    <a id="pgp-key" href="#pgp-key" class="navbar-item">
+    <a id="keys" href="#keys" class="navbar-item">
         <span class="navbar-icon material-symbols">key</span>
         <p class="navbar-label">Keys</p>
     </a>
@@ -44,26 +44,23 @@
         </code>
     </div>
 
-    <div class="divider"></div>
+    <a id="infinity-mirror" href="#infinity-mirror" class="navbar-item">
+        <span class="navbar-icon material-symbols">all_inclusive</span>
+        <p class="navbar-label">Mirror</p>
+    </a>
+    <div class="page">#!INCLUDE(infinity-mirror.html)</div>
+
+    <div class="divider hide-on-mobile"></div>
 
     <a
         href="https://osdev.rocks"
-        class="navbar-item"
+        class="navbar-item hide-on-mobile"
         target="_blank"
         rel="noopener noreferrer"
         style="margin-bottom: var(--padding)"
     >
         <span class="navbar-icon material-symbols">terminal</span>
         <p class="navbar-label">OSDev Rocks</p>
-    </a>
-    <a
-        href="https://scaffolding.brightshard.dev"
-        class="navbar-item"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <span class="navbar-icon material-symbols">sdk</span>
-        <p class="navbar-label">Scaffolding</p>
     </a>
 
     <a id="settings" href="#settings" class="navbar-item">

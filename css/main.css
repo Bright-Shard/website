@@ -11,20 +11,76 @@
 }
 
 @layer overrides {
+    img, iframe, object {
+        width: var(--content-width);
+    }
+
+    a {
+        color: unset;
+        transition-duration: 0.4s;
+
+        &:hover {
+            color: var(--subtext-0);
+        }
+    }
+
+    blockquote {
+        border-left-width: 3px;
+        border-left-color: var(--text);
+        border-left-style: solid;
+        padding-left: var(--padding);
+        margin-left: var(--padding);
+
+        --content-width: calc(
+            min(
+                680px,
+                calc(calc(100vw - calc(var(--padding) * 2)) - var(--navbar-width))
+            )
+            - calc(var(--padding) * 4)
+        );
+    }
+
+    ol, ul {
+        padding-left: calc(var(--padding) * 2);
+    }
+
+    code {
+        font-family: "Roboto Mono";
+        font-size: 14px;
+
+        padding: 0 var(--gap);
+
+        background-color: var(--surface-0);
+        border-style: solid;
+        border-width: 0px;
+        border-radius: 4px;
+    }
+
+    #keys ~ .page pre {
+        text-wrap: wrap;
+        word-wrap: break-word;
+    }
+
     #!INCLUDE(home.css)
     #!INCLUDE(blog.css)
 }
 
 @layer defaults {
     .page {
+        --page-padding: calc(calc(100vw - var(--content-width)) / 2);
+        --half-navbar: calc(var(--navbar-width) / 2);
+
         display: none;
         position: absolute;
-        width: calc(100% - var(--navbar-width));
-        height: calc(100% - var(--navbar-height));
+        width: 100%;
+        height: calc(100vh - var(--navbar-height));
         top: 0;
-        left: var(--navbar-width);
-        padding: var(--padding);
-        overflow: auto;
+        left: 0;
+        padding-left: calc(var(--page-padding) + var(--half-navbar));
+        padding-right: calc(var(--page-padding) - var(--half-navbar));
+        margin-left: auto;
+        margin-right: auto;
+        overflow-y: auto;
 
         .title {
             font-size: 40px;
@@ -42,11 +98,10 @@
             font-weight: 550;
         }
 
-        .body-text {
-            max-width: 680px;
+        * {
             margin-left: auto;
             margin-right: auto;
-            font-size: 16px;
+            scroll-behavior: smooth;
         }
     }
 
@@ -68,22 +123,6 @@
 
     * {
         box-sizing: border-box;
-    }
-
-    a {
-        color: unset;
-        transition-duration: 0.4s;
-
-        &:hover {
-            color: var(--subtext-0);
-        }
-    }
-
-    blockquote {
-        border-left-width: 3px;
-        border-left-color: var(--text);
-        border-left-style: solid;
-        padding-left: var(--gap);
     }
 
     .material-symbols,
@@ -117,3 +156,5 @@
             'FILL' 1;
     }
 }
+
+#!INCLUDE(layouts.css)

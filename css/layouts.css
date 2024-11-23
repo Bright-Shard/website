@@ -1,0 +1,87 @@
+/*
+    LAYOUTS
+
+    Makes the page responsive, and stores spacing information. This sets the
+    following variables:
+    --navbar-width: How far from the left content should offset to make room for
+        the navigation bar.
+    --navbar-height: Same as --navbar-width, but for the height of the
+        navigation bar.
+    --padding: A large gap around elements.
+    --gap: A small gap between similar elements.
+
+    This is also responsible for changing the direction of the navigation bar
+    to be horizontal on phones and vertical on other devices.
+
+    Screen size classes:
+    x<500         small (phone)
+    500<=x<840    medium (tablet)
+    x>=840        large (desktop)
+    Adapted from Material 3:
+    https://m3.material.io/foundations/layout/applying-layout/window-size-classes
+*/
+
+body {
+    --padding: 12px;
+    --gap: 5px;
+    --content-width: min(
+        680px,
+        calc(calc(100vw - calc(var(--padding) * 2)) - var(--navbar-width))
+    );
+}
+
+@media (width < 500px) {
+    body {
+        --navbar-width: 0px;
+        --navbar-height: 75px;
+    }
+
+    #navbar {
+        width: 100%;
+        height: var(--navbar-height);
+        flex-direction: row;
+        margin-top: calc(100vh - var(--navbar-height));
+
+        .divider {
+            height: calc(100% - var(--gap));
+            width: 1px;
+            background-color: var(--text);
+            margin: 0px var(--gap);
+            flex-shrink: 0;
+        }
+
+        .hide-on-mobile {
+            display: none;
+        }
+    }
+
+    #home {
+        margin-left: auto;
+    }
+}
+
+@media (500px <= width < 840px) {
+    body {
+        --navbar-width: 75px;
+        --navbar-height: 0px;
+    }
+
+    #navbar {
+        width: var(--navbar-width);
+        height: 100%;
+        flex-direction: column;
+    }
+}
+
+@media (width >= 840px) {
+    body {
+        --navbar-width: 75px;
+        --navbar-height: 0px;
+    }
+
+    #navbar {
+        width: var(--navbar-width);
+        height: 100%;
+        flex-direction: column;
+    }
+}

@@ -1,35 +1,41 @@
 <div class="blog-post" id="blog">
     <h1 class="title">My Blog</h1>
     <p>
-        This blog's still very much WIP - for example, posts don't yet have a
-        table of contents. I'm currently working on a Lua runtime to embed in my
-        website's compiler; once that's done, this will start looking a lot
-        nicer.<br /><br />So, TLDR, you may want to check back in a couple of
-        weeks.
+        This blog's still very much WIP - there's not much content, and posts
+        don't yet have a table of contents. I'm currently working on a Lua
+        runtime to embed in my website's compiler; once that's done, this will
+        start looking a lot nicer.
+        <br /><br />
+        So, TLDR, you may want to check back in a couple of weeks.
     </p>
 
     <br />
     <br />
 
-    <div id="blog-post-selection">
-        <a class="button-outlined blog-card" href="#blog-post-ai">
+    <div class="card-gallery">
+        <a class="button-outlined card" href="#blog-post-ai">
             <h1>AI is Unsustainable</h1>
-            <p>As an AI chatbot, please stop inv this technology.</p>
+            <p>As an AI chatbot, please stop investing in this technology.</p>
         </a>
-        <a class="button-outlined blog-card" href="#blog-post-testing">
+        <a class="button-outlined card" href="#blog-post-testing">
             <h1>Truly A Blog Post</h1>
             <p>wowza a cool description<br />This one's just a test post.</p>
-        </a>
-        <a class="blog-card" href="#blog" style="text-decoration: none">
-            <h1>More to come...</h1>
-            <p>Check back later!</p>
         </a>
     </div>
 </div>
 
-<a id="blog-back-btn" class="button-outlined" href="#blog">&lt; Back to Blog</a>
-
 <div class="blog-post" id="blog-post-ai">#!INCLUDE(../blog/ai.md)</div>
 <div class="blog-post" id="blog-post-testing">
     #!INCLUDE(../blog/testing.md)
+</div>
+
+<div id="blog-footer">
+    <div class="divider"></div>
+    <p>
+        Written by BrightShard
+        <br />
+        brightshard@brightshard.dev
+        <br /><br />
+        <a href="#blog">&lt; Back to Blog Homepage</a>
+    </p>
 </div>
