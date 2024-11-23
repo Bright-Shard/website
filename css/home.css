@@ -74,14 +74,15 @@
                 border-right-style: solid;
                 border-right-width: 1px;
             }
+        }
 
-            &:last-child p {
-                animation:
-                    typing var(--typing-length) steps(var(--chars))
-                        var(--typing-delay) 1 normal forwards,
-                    blinking var(--blinking-length) linear var(--blinking-delay)
-                        var(--blinking-count) normal forwards;
-            }
+        div:last-child p,
+        .last-greeting p {
+            animation:
+                typing var(--typing-length) steps(var(--chars))
+                    var(--typing-delay) 1 normal forwards,
+                blinking var(--blinking-length) linear var(--blinking-delay)
+                    var(--blinking-count) normal forwards;
         }
     }
 
