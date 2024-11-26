@@ -17,7 +17,7 @@ I've even had a teacher *encourage AI usage* on assignments.
 
 # The Problem
 
-While it's cool to see a product spreading so rapidly, it's unfortunately a very problematic technology. There are *tons* if problems and questions with AI. Many of these problems aren't ones I'm going to address in this post, because they can get rather philosophical and lengthy - I'm not, for example, going to discuss if this technology is truly intelligent.
+While it's cool to see a product spreading so rapidly, it's unfortunately a very problematic technology. There are *tons* of problems and questions with AI. Many of these problems aren't ones I'm going to address in this post, because they can get rather philosophical and lengthy - I'm not, for example, going to discuss if this technology is truly intelligent.
 
 However, there are three objective problems with AI that you should be aware of:
 
@@ -235,9 +235,9 @@ The important thing to realise here is that an LLM's performance depends largely
 >
 > I'm oversimplifying *greatly* here for the sake of explaining this problem. There's a lot more factors that go into GPTs.
 >
-> If you want a more in-depth explanation on how GPTs work, 3Blue1Brown has a great series on YouTube about it:
+> If you want a more in-depth explanation on how GPTs work, [3Blue1Brown has a great series on YouTube about it](https://youtube.com/watch?v=wjZofJX0v4M).
 >
-> <iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/wjZofJX0v4M" title="YouTube video player" frameborder="0"></iframe>
+> <details class="hide-arrow"><summary class="button-outlined">Load YouTube Miniplayer (requires JS)</summary><iframe loading="lazy" referer="none" width="560" height="315" src="https://www.youtube-nocookie.com/embed/wjZofJX0v4M" title="YouTube video player" frameborder="0"></iframe></details>
 
 Since AI needs tons of high-quality training data, that data comes from the internet. There's no other source that can provide such vast amounts of content for training data. However, not all internet content is going to make good training data. A satirical article from The Onion or a piece of propaganda isn't going to be good for the AI, because then it might generate content with misinformation. Ironically, [AI-generated content *also* isn't high-quality enough to train AI](https://www.scientificamerican.com/article/ai-generated-data-can-poison-future-ai-models/), because any errors it makes will get reinforced in AI that trains on it.
 
@@ -329,7 +329,7 @@ AI is currently funded by private investments and some of the wealthiest corpora
 This economic power still has a weakness, though - it feeds on public opinion, and more specifically, misinformation. Here's some examples of that:
 - As mentioned before, OpenAI doesn't publicly release financial statements. Because there's few public, concrete numbers for its finances, all of us in the general public really have to rely on word-of-mouth and gut instinct about how they're doing financially. This allows them to make it *seem* like they're making money, because they always publicly mention the billions they raise in investments without ever discussing their even larger losses.
 - In some cases, companies call software "AI" that is actually a completely unrelated technology. The [Rabbit R1](https://www.rabbit.tech/), for example, [raised tens of millions in funding](https://www.rabbit.tech/newsroom/rabbit-raises-additional-10m) for a cheap, handheld AI product. It was later revealed to actually rely on [simple scripts](https://youtu.be/zLvFc_24vSM?t=235) from a well-known project called [Playwright](https://playwright.dev/), and really provided no AI services at all besides ChatGPT queries.
-- Finally, companies profit by overstating what AI will do. There was Sam Altman claiming his company would invent AGI, but even other companies like Apple have oversold their AI products. [Apple Intelligence](https://www.apple.com/apple-intelligence/) has seen tons of [delays](https://9to5mac.com/2024/10/23/why-the-apple-intelligence-delays-what-about-the-new-siri-craig-federighi-explains-video/), and has [mixed results according to MKBHD](https://www.youtube.com/watch?v=haDjmBT9tu4) (MKBHD actually *specifically* calls out this exact point!).
+- Finally, companies profit by overstating what AI will do. There was Sam Altman claiming his company would invent AGI, but even other companies like Apple have oversold their AI products. [Apple Intelligence](https://www.apple.com/apple-intelligence/) has seen tons of [delays](https://9to5mac.com/2024/10/23/why-the-apple-intelligence-delays-what-about-the-new-siri-craig-federighi-explains-video/), and has [mixed results according to MKBHD](https://www.youtube.com/watch?v=haDjmBT9tu4) (MKBHD actually *specifically* calls out this exact point of overselling!).
 
 So, then - what can *you* do about these issues with AI? Well, surprisingly, it's quite simple: **talk about what you know**. Knowledge is power, so spread what you've read here, and any additional details you learn in your own research. Since AI is running largely on mislead public opinion, spreading the truth is one of the simplest ways to cut through its nonsense. This is actually the exact reason I wrote this blog post to begin with.
 
