@@ -15,29 +15,48 @@
         width: var(--content-width);
     }
 
-    a {
-        color: unset;
-        transition-duration: 0.4s;
-
-        &:hover {
-            color: var(--subtext-0);
-        }
-    }
-
-    blockquote {
+    blockquote, details > div {
+        border-style: solid;
+        border-width: 0;
         border-left-width: 3px;
-        border-left-color: var(--text);
-        border-left-style: solid;
-        padding-left: var(--padding);
-        margin-left: var(--padding);
+        border-color: color-mix(in srgb, var(--text) 75%, transparent);
+        padding: var(--local-padding);
 
         --content-width: calc(
             min(
                 680px,
                 calc(calc(100vw - calc(var(--padding) * 2)) - var(--navbar-width))
             )
-            - calc(var(--padding) * 4)
+            - calc(var(--local-padding) * 4)
         );
+    }
+    blockquote {
+        --local-padding: var(--gap);
+
+        background-color: var(--surface-0);
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+
+        p {
+            margin: var(--gap);
+        }
+    }
+    details > div {
+        --local-padding: var(--padding);
+        margin-top: var(--gap);
+        padding-top: 0;
+        padding-bottom: 0;
+
+        > *:first-child {
+            margin-top: 0;
+        }
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    details > summary {
+        list-style-position: outside;
     }
 
     ol, ul {
@@ -66,6 +85,15 @@
 }
 
 @layer defaults {
+    a {
+        color: unset;
+        transition-duration: 0.4s;
+
+        &:hover {
+            color: var(--subtext-0);
+        }
+    }
+
     .page {
         --page-padding: calc(calc(100vw - var(--content-width)) / 2);
         --half-navbar: calc(var(--navbar-width) / 2);

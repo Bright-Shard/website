@@ -37,7 +37,7 @@
         .navbar-label {
             font-size: 12px;
             margin: 0px;
-            margin-top: 5px;
+            margin-top: 2px;
             text-align: center;
             color: var(--text);
         }
@@ -104,7 +104,6 @@
     }
 
     #settings {
-        margin-top: auto;
         margin-left: auto;
 
         .navbar-icon {

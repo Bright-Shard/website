@@ -9,7 +9,7 @@
         font-family: "Material Symbols";
         font-style: normal;
         font-weight: 100 700;
-        src: url("fonts/material-icons.woff2") format("woff2");
+        src: url("fonts/material-icons.trimmed.woff2") format("woff2");
     }
     @font-face {
         font-family: "Roboto Flex";

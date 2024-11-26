@@ -22,8 +22,6 @@
 */
 
 body {
-    --padding: 12px;
-    --gap: 5px;
     --content-width: min(
         680px,
         calc(calc(100vw - calc(var(--padding) * 2)) - var(--navbar-width))
@@ -33,7 +31,9 @@ body {
 @media (width < 500px) {
     body {
         --navbar-width: 0px;
-        --navbar-height: 75px;
+        --navbar-height: 60px;
+        --padding: 12px;
+        --gap: 5px;
     }
 
     #navbar {
@@ -41,6 +41,8 @@ body {
         height: var(--navbar-height);
         flex-direction: row;
         margin-top: calc(100dvh - var(--navbar-height));
+        padding-top: 0;
+        padding-bottom: 0;
 
         > .divider {
             height: calc(100% - var(--gap));
@@ -64,12 +66,18 @@ body {
     body {
         --navbar-width: 75px;
         --navbar-height: 0px;
+        --padding: 12px;
+        --gap: 5px;
     }
 
     #navbar {
         width: var(--navbar-width);
         height: 100%;
         flex-direction: column;
+
+        #settings {
+            margin-top: auto;
+        }
     }
 }
 
@@ -77,11 +85,17 @@ body {
     body {
         --navbar-width: 75px;
         --navbar-height: 0px;
+        --padding: 12px;
+        --gap: 5px;
     }
 
     #navbar {
         width: var(--navbar-width);
         height: 100%;
         flex-direction: column;
+
+        #settings {
+            margin-top: auto;
+        }
     }
 }

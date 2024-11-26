@@ -8,6 +8,7 @@
 
 .card {
     border-radius: 16px;
+    background-color: var(--surface-0);
     border-color: var(--surface-2);
     border-style: solid;
     border-width: 1px;
@@ -32,5 +33,16 @@
     .button-text {
         float: right;
         margin-top: var(--padding);
+    }
+
+    .button-filled {
+        background-color: var(--surface-1);
+
+        &:hover {
+            background-color: var(--surface-2);
+        }
+    }
+    .button-outlined:hover {
+        background-color: var(--surface-1);
     }
 }
