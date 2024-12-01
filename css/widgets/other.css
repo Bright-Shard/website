@@ -8,7 +8,7 @@
 
 .button-outlined {
     border-radius: 16px;
-    border-color: var(--surface-2);
+    border-color: var(--accent);
     border-style: solid;
     border-width: 1px;
 
@@ -17,29 +17,11 @@
     transition-duration: var(--hover-animation-len);
     display: inline-block;
     margin-left: var(--gap);
+    color: var(--accent);
 
     &:hover {
         cursor: pointer;
         background-color: var(--surface-0);
-        color: var(--text);
-    }
-}
-.button-filled {
-    border-radius: 16px;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 1px;
-
-    text-decoration: none;
-    padding: calc(var(--padding) / 2) var(--padding);
-    transition-duration: var(--hover-animation-len);
-    display: inline-block;
-    background-color: var(--surface-0);
-    margin-left: var(--gap);
-
-    &:hover {
-        background-color: var(--background);
-        color: var(--text);
     }
 }
 .button-text {
@@ -53,6 +35,7 @@
     transition-duration: var(--hover-animation-len);
     display: inline-block;
     margin-left: var(--gap);
+    color: var(--accent);
 
     &:hover {
         background-color: var(--surface-0);

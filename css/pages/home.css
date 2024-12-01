@@ -7,6 +7,7 @@
         margin-left: auto;
         margin-right: auto;
         font-family: "Roboto Mono", monospace;
+        color: var(--accent);
 
         div {
             position: absolute;
@@ -92,20 +93,53 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: var(--icon-size);
         justify-content: center;
         gap: var(--padding);
 
         a {
             margin: 0;
-            height: var(--icon-size);
-            font-size: var(--icon-size);
             text-decoration: none;
+            background-color: var(--mantle);
+            padding: var(--gap);
+            border-radius: 100px;
+            width: calc(var(--icon-size) + calc(var(--gap) * 2));
+            height: calc(var(--icon-size) + calc(var(--gap) * 2));
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &:hover {
+                background-color: color-mix(
+                    in srgb,
+                    var(--mantle) 80%,
+                    var(--accent)
+                );
+            }
         }
 
         svg {
             height: var(--icon-size);
             width: var(--icon-size);
+        }
+
+        /*
+            Icons are slightly different sizes and need different sizes to look the same size... cursed...
+        */
+        #discord-icon {
+            width: 40px;
+            height: 40px;
+        }
+        #mail-icon {
+            font-size: 40px;
+        }
+        #signal-icon {
+            width: 35px;
+            height: 35px;
+        }
+        #github-icon {
+            width: 45px;
+            height: 45px;
         }
     }
 }

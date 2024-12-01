@@ -19,7 +19,7 @@
         border-style: solid;
         border-width: 0;
         border-left-width: 3px;
-        border-color: color-mix(in srgb, var(--text) 75%, transparent);
+        border-color: color-mix(in srgb, var(--accent) 75%, transparent);
         padding: var(--local-padding);
 
         --content-width: calc(
@@ -30,10 +30,11 @@
             - calc(var(--local-padding) * 4)
         );
     }
+
     blockquote {
         --local-padding: var(--gap);
 
-        background-color: var(--surface-0);
+        background-color: color-mix(in srgb, var(--surface-0) 95%, var(--accent));
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;
 
@@ -59,11 +60,14 @@
 
         > summary {
             list-style-position: outside;
+
+            &::marker {
+                color: var(--accent);
+            }
         }
         &.hide-arrow > summary {
-
             list-style-type: '';
-                margin-left: var(--gap);
+            margin-left: var(--gap);
         }
 
         .button-outlined {
@@ -96,18 +100,23 @@
         word-wrap: break-word;
     }
 
-    #!INCLUDE(home.css)
-    #!INCLUDE(blog.css)
+    #!INCLUDE(pages/home.css)
+    #!INCLUDE(pages/blog.css)
+    #!INCLUDE(pages/settings.css)
 }
 
 @layer defaults {
+    *::selection {
+        background-color: color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+
     a {
         color: unset;
-        transition-duration: 0.4s;
+        transition-duration: var(--hover-animation-len);
+    }
 
-        &:hover {
-            color: var(--subtext-0);
-        }
+    p a, .blog-post a, li a {
+        color: var(--accent);
     }
 
     .page {
@@ -156,7 +165,7 @@
         margin: 0px;
         line-height: 1.4;
 
-        background-color: var(--background);
+        background-color: var(--base);
         color: var(--text);
         font-family: "Roboto Flex";
     }

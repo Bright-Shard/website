@@ -236,8 +236,6 @@ The important thing to realise here is that an LLM's performance depends largely
 > I'm oversimplifying *greatly* here for the sake of explaining this problem. There's a lot more factors that go into GPTs.
 >
 > If you want a more in-depth explanation on how GPTs work, [3Blue1Brown has a great series on YouTube about it](https://youtube.com/watch?v=wjZofJX0v4M).
->
-> <details class="hide-arrow"><summary class="button-outlined">Load YouTube Miniplayer (requires JS)</summary><iframe loading="lazy" referer="none" width="560" height="315" src="https://www.youtube-nocookie.com/embed/wjZofJX0v4M" title="YouTube video player" frameborder="0"></iframe></details>
 
 Since AI needs tons of high-quality training data, that data comes from the internet. There's no other source that can provide such vast amounts of content for training data. However, not all internet content is going to make good training data. A satirical article from The Onion or a piece of propaganda isn't going to be good for the AI, because then it might generate content with misinformation. Ironically, [AI-generated content *also* isn't high-quality enough to train AI](https://www.scientificamerican.com/article/ai-generated-data-can-poison-future-ai-models/), because any errors it makes will get reinforced in AI that trains on it.
 
