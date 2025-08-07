@@ -1,0 +1,25 @@
+.button-outlined,
+.button-text {
+	border-radius: 16px;
+	border-style: solid;
+	border-width: 1px;
+
+	text-decoration: none;
+	padding: var(--gap) var(--gap-large);
+	transition-duration: var(--transition-duration);
+	display: inline-block;
+	margin-left: var(--gap);
+	color: var(--theme-accent);
+
+	&:hover {
+		cursor: pointer;
+		background-color: var(--theme-surface-0);
+	}
+}
+
+.button-outlined {
+	border-color: var(--theme-accent);
+}
+.button-text {
+	border-color: transparent;
+}

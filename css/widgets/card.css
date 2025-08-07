@@ -2,48 +2,48 @@
 */
 
 .card-gallery {
-    column-width: 300px;
-    column-gap: var(--gap);
+	column-width: 300px;
+	column-gap: var(--gap);
 
-    > a {
-        color: var(--text);
-    }
+	> a {
+		color: var(--theme-text);
+	}
 }
 
 .card {
-    border-radius: 16px;
-    border-color: var(--surface-1);
-    border-style: solid;
-    border-width: 1px;
+	border-radius: 16px;
+	border-color: var(--theme-surface-1);
+	border-style: solid;
+	border-width: 1px;
 
-    padding: var(--padding);
-    margin-bottom: var(--gap);
-    min-width: 100%;
-    display: inline-block;
-    text-decoration: none;
+	padding: var(--gap-large);
+	margin-bottom: var(--gap);
+	min-width: 100%;
+	display: inline-block;
+	text-decoration: none;
 
-    h1,
-    h2,
-    h3,
-    p {
-        margin: 0;
-    }
+	h1,
+	h2,
+	h3,
+	p {
+		margin: 0;
+	}
 
-    h1 {
-        margin-bottom: var(--padding);
-        line-height: 1;
-    }
+	h1 {
+		margin-bottom: var(--gap-large);
+		line-height: 1;
+	}
 
-    .button-outlined,
-    .button-text {
-        float: right;
-        margin-top: var(--padding);
-    }
+	.button-outlined,
+	.button-text {
+		float: right;
+		margin-top: var(--gap-large);
+	}
 
-    .button-text:hover {
-        background-color: var(--surface-1);
-    }
-    .button-outlined:hover {
-        background-color: var(--surface-1);
-    }
+	.button-text:hover {
+		background-color: var(--theme-surface-1);
+	}
+	.button-outlined:hover {
+		background-color: var(--theme-surface-1);
+	}
 }

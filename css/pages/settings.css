@@ -1,85 +1,107 @@
+/* Settings navbar button */
+#settings {
+	margin-left: auto;
+
+	.navbar-icon {
+		font-size: 32px;
+		height: min-content;
+		padding: 5px;
+
+		&::before {
+			border-radius: calc(var(--rounding) * 2);
+		}
+	}
+}
+
+/* Hide the radio buttons that actually set the theme */
+#themes {
+	display: none;
+}
+
+/* Colour Schemes */
 #theme-selection label .card {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 
-    .demo-navbar {
-        position: absolute;
-        height: 100%;
-        width: 25px;
-        left: 0;
-        top: 0;
-    }
+	.demo-navbar {
+		position: absolute;
+		height: 100%;
+		width: 25px;
+		left: 0;
+		top: 0;
+	}
 
-    .demo-content {
-        margin-left: 25px;
-    }
+	.demo-content {
+		margin-left: 25px;
+	}
 }
-
 #theme-selection label[for="catppuccin-latte"] .card {
-    background-color: var(--latte-base);
+	background-color: var(--theme-latte-base);
 
-    h3,
-    p {
-        color: var(--latte-text);
-    }
+	h3,
+	p {
+		color: var(--theme-latte-text);
+	}
 
-    .demo-navbar {
-        background-color: var(--latte-surface-0);
-    }
+	.demo-navbar {
+		background-color: var(--theme-latte-surface-0);
+	}
 }
-
 #theme-selection label[for="catppuccin-frappe"] .card {
-    background-color: var(--frappe-base);
+	background-color: var(--theme-frappe-base);
 
-    h3,
-    p {
-        color: var(--frappe-text);
-    }
+	h3,
+	p {
+		color: var(--theme-frappe-text);
+	}
 
-    .demo-navbar {
-        background-color: var(--frappe-surface-0);
-    }
+	.demo-navbar {
+		background-color: var(--theme-frappe-surface-0);
+	}
 }
-
 #theme-selection label[for="catppuccin-macchiato"] .card {
-    background-color: var(--macchiato-base);
+	background-color: var(--theme-macchiato-base);
 
-    h3,
-    p {
-        color: var(--macchiato-text);
-    }
+	h3,
+	p {
+		color: var(--theme-macchiato-text);
+	}
 
-    .demo-navbar {
-        background-color: var(--macchiato-surface-0);
-    }
+	.demo-navbar {
+		background-color: var(--theme-macchiato-surface-0);
+	}
 }
-
 #theme-selection label[for="catppuccin-mocha"] .card {
-    background-color: var(--mocha-base);
+	background-color: var(--theme-mocha-base);
 
-    h3,
-    p {
-        color: var(--mocha-text);
-    }
+	h3,
+	p {
+		color: var(--theme-mocha-text);
+	}
 
-    .demo-navbar {
-        background-color: var(--mocha-surface-0);
-    }
+	.demo-navbar {
+		background-color: var(--theme-mocha-surface-0);
+	}
 }
 
+/* Accents */
 #accent-selection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--gap);
-    justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--gap);
+	justify-content: center;
 
-    label {
-        margin: 0;
-    }
-    label div {
-        border-radius: 100px;
-        width: 48px;
-        height: 48px;
-    }
+	label {
+		margin: 0;
+	}
+	label div {
+		border-radius: 100px;
+		width: 48px;
+		height: 48px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }

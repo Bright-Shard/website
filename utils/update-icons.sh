@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Removes unneeded glyphs from the Material Icons file.
-# The font has hundreds of glyphs when I really only need a handlful...
-# Removing unneeded ones saves lots of space for the SVG build since I embed the font directly
+# The font has hundreds of glyphs when I really only need a handfull...
+# Removing unneeded ones saves lots of space for the SVG build since I embed
+# the font directly
 #
 # Source: https://stackoverflow.com/questions/64614572/creating-a-material-icons-subset
 
 # The icons to keep in the font
-ICONS="home browse book terminal sdk settings key mail all_inclusive"
+ICONS="home browse book commit sdk settings key mail all_inclusive"
 
 # Folder locations
 ROOT=$(dirname $0)/..
@@ -35,7 +36,7 @@ do
     if [ $? -eq 0 ]
     then
         CODEPOINT=$(cut -d ' ' -f 2 <<< "$line")
-        echo "  Font icon: Name: '$NAME' // Codepoint: '$CODEPOINT'"
+        echo "  Found icon '$NAME' (codepoint '$CODEPOINT')"
         CODEPOINTS="$CODEPOINT,$CODEPOINTS"
     fi
 done <<< "$CODEPOINTS_SRC"

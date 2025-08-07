@@ -1,213 +1,295 @@
 @layer defaults, widgets, overrides;
 
 @layer defaults {
-    #!INCLUDE(themes.css)
+	* {
+		box-sizing: border-box;
+	}
+
+	/* Constants */
+	:root {
+		/* Speed of animations */
+		--transition-duration: 0.4s;
+		/* Sizes for spacing between elements */
+		--gap: 5px;
+		--gap-medium: 10px;
+		--gap-large: 12px;
+		/* How much curve to apply to rounded elements */
+		--rounding: 16px;
+		/* Opacities for elements in specific interaction states */
+		--hover-opacity: 20%;
+		--press-opacity: 50%;
+
+		/* Size of the full page */
+		--page-width: calc(100dvw - var(--navbar-width, 0px));
+		--page-height: calc(100dvh - var(--navbar-height, 0px));
+		/*
+		 * Size of content within the page, smaller for more comfortable reading
+		 *
+		 * Base content width is separated from content width so content width can
+		 * be easily modified in some elements.
+		 */
+		--max-content-width: 680px;
+		--base-content-width: min(680px, calc(100dvw - calc(calc(var(--gap-large) * 2) + var(--navbar-width, 0))));
+		--content-width: var(--base-content-width);
+	}
+
+	/* Phone layout */
+	@media (width < 500px) {
+		:root {
+			--navbar-height: 65px;
+			--navbar-dir: row;
+		}
+
+		#navbar {
+			margin-top: calc(100dvh - var(--navbar-height));
+		}
+
+		.desktop-only {
+			display: none !important;
+		}
+	}
+	/* Tablet/desktop layout
+	 *
+	 * Note:
+    * Material 3 recommends treating screens between 500px=..840px as a
+    * tablet, and screens 840px=.. as a computer. I do not currently distinct
+    * between the two.
+    */
+	@media (width >= 500px) {
+		:root {
+			--navbar-width: 60px;
+			--navbar-dir: column;
+		}
+
+		.mobile-only {
+			display: none !important;
+		}
+	}
+
+	/* Actual styling */
+	#!INCLUDE(themes.css)
+	body {
+		position: absolute;
+		width: 100lvw;
+		height: 100lvh;
+		margin: 0px;
+		line-height: 1.4;
+
+		background-color: var(--theme-base);
+		color: var(--text);
+		font-family: "Roboto Flex";
+	}
+
+	*::selection {
+		background-color: color-mix(
+			in srgb,
+			var(--theme-accent) 20%,
+			transparent
+		);
+	}
+
+	a {
+		color: unset;
+		transition-duration: var(--transition-duration);
+	}
+
+	.page {
+		display: none;
+		position: absolute;
+		width: var(--page-width);
+		height: var(--page-height);
+		padding: 0 calc(calc(var(--page-width) - var(--content-width)) / 2);
+		padding-bottom: var(--gap-large);
+		top: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		color: var(--theme-text);
+		overflow-y: scroll;
+
+		.title {
+			font-size: 40px;
+			font-weight: 600;
+			height: 70px;
+			text-align: center;
+			position: relative;
+		}
+		h1 {
+			font-weight: 550;
+		}
+		b {
+			font-weight: 600;
+		}
+
+		a {
+			color: var(--theme-accent);
+			position: relative;
+
+			&::before {
+				content: "";
+
+				border-style: solid;
+				border-width: 0;
+				border-radius: var(--rounding);
+				padding: 2px;
+
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: -1px;
+				left: -2px;
+				opacity: 0;
+				z-index: -1;
+
+				transition-duration: var(--transition-duration);
+				background-color: var(--theme-overlay-0);
+			}
+
+			&:hover::before {
+				/* color: color-mix(in srgb, var(--theme-accent) 65%, var(--theme-text)); */
+				opacity: var(--hover-opacity);
+			}
+		}
+
+		* {
+			margin-left: auto;
+			margin-right: auto;
+			scroll-behavior: smooth;
+		}
+	}
+
+	img,
+	iframe,
+	object {
+		width: var(--content-width);
+	}
+
+	blockquote,
+	details > div {
+		border-style: solid;
+		border-width: 0;
+		border-left-width: 3px;
+		border-color: color-mix(in srgb, var(--theme-accent) 75%, transparent);
+		padding: var(--gap-medium);
+
+		--content-width: calc(var(--base-content-width) - calc(var(--gap) * 4));
+	}
+
+	blockquote {
+		background-color: color-mix(
+			in srgb,
+			var(--theme-surface-0) 95%,
+			var(--theme-accent)
+		);
+		border-top-right-radius: 16px;
+		border-bottom-right-radius: 16px;
+
+		p {
+			margin: var(--gap);
+		}
+	}
+
+	details {
+		padding-left: var(--gap-large);
+
+		> div {
+			margin-top: var(--gap);
+			padding-top: 0;
+			padding-bottom: 0;
+
+			> *:first-child {
+				margin-top: 0;
+			}
+			> *:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		> summary {
+			list-style-position: outside;
+
+			&::marker {
+				color: var(--theme-accent);
+			}
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		&.hide-arrow > summary {
+			list-style-type: "";
+		}
+
+		.button-outlined {
+			margin-top: var(--gap-large);
+			margin-bottom: var(--gap-large);
+		}
+		.button-outlined:hover {
+			background-color: var(--theme-surface-1);
+		}
+	}
+
+	ol,
+	ul {
+		padding-left: calc(var(--gap-large) * 2);
+	}
+
+	code {
+		font-family: "Roboto Mono";
+		font-size: 14px;
+
+		padding: 0 var(--gap);
+
+		background-color: var(--theme-surface-0);
+		border-style: solid;
+		border-width: 0px;
+		border-radius: 4px;
+	}
+
+	/* Icon font */
+	.material-symbols,
+	.material-symbols-filled {
+		font-family: "Material Symbols";
+		font-weight: normal;
+		font-style: normal;
+		font-size: 24px;
+		line-height: 1;
+		letter-spacing: normal;
+		text-transform: none;
+		display: inline-block;
+		white-space: nowrap;
+		word-wrap: normal;
+		direction: ltr;
+		-moz-font-feature-settings: "liga";
+		-moz-osx-font-smoothing: grayscale;
+		font-variation-settings:
+			"wght" 400,
+			"GRAD" 0,
+			"opsz" 24;
+	}
+	.material-symbols {
+		font-variation-settings: "FILL" 0;
+	}
+	.material-symbols-filled {
+		font-variation-settings: "FILL" 1;
+	}
 }
 
-@layer widgets {
-    #!INCLUDE(widgets/navigation.css)
-    #!INCLUDE(widgets/other.css)
-    #!INCLUDE(widgets/card.css)
-}
-
+/* Specific pages' changes to the default styling */
 @layer overrides {
-    img, iframe, object {
-        width: var(--content-width);
-    }
+	#keys ~ .page pre {
+		text-wrap: wrap;
+		word-wrap: break-word;
+	}
 
-    blockquote, details > div {
-        border-style: solid;
-        border-width: 0;
-        border-left-width: 3px;
-        border-color: color-mix(in srgb, var(--accent) 75%, transparent);
-        padding: var(--local-padding);
-
-        --content-width: calc(
-            min(
-                680px,
-                calc(calc(100vw - calc(var(--padding) * 2)) - var(--navbar-width))
-            )
-            - calc(var(--local-padding) * 4)
-        );
-    }
-
-    blockquote {
-        --local-padding: var(--gap);
-
-        background-color: color-mix(in srgb, var(--surface-0) 95%, var(--accent));
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
-
-        p {
-            margin: var(--gap);
-        }
-    }
-
-    details {
-        > div {
-            --local-padding: var(--padding);
-            margin-top: var(--gap);
-            padding-top: 0;
-            padding-bottom: 0;
-
-            > *:first-child {
-                margin-top: 0;
-            }
-            > *:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        > summary {
-            list-style-position: outside;
-
-            &::marker {
-                color: var(--accent);
-            }
-        }
-        &.hide-arrow > summary {
-            list-style-type: '';
-            margin-left: var(--gap);
-        }
-
-        .button-outlined {
-            margin-top: var(--padding);
-            margin-bottom: var(--padding);
-        }
-        .button-outlined:hover {
-            background-color: var(--surface-1);
-        }
-    }
-
-    ol, ul {
-        padding-left: calc(var(--padding) * 2);
-    }
-
-    code {
-        font-family: "Roboto Mono";
-        font-size: 14px;
-
-        padding: 0 var(--gap);
-
-        background-color: var(--surface-0);
-        border-style: solid;
-        border-width: 0px;
-        border-radius: 4px;
-    }
-
-    #keys ~ .page pre {
-        text-wrap: wrap;
-        word-wrap: break-word;
-    }
-
-    #!INCLUDE(pages/home.css)
-    #!INCLUDE(pages/blog.css)
-    #!INCLUDE(pages/settings.css)
+	#!INCLUDE(pages/home.css)
+	#!INCLUDE(pages/blog.css)
+	#!INCLUDE(pages/settings.css)
 }
 
-@layer defaults {
-    *::selection {
-        background-color: color-mix(in srgb, var(--accent) 20%, transparent);
-    }
-
-    a {
-        color: unset;
-        transition-duration: var(--hover-animation-len);
-    }
-
-    p a, .blog-post a, li a {
-        color: var(--accent);
-    }
-
-    .page {
-        --page-padding: calc(calc(100vw - var(--content-width)) / 2);
-        --half-navbar: calc(var(--navbar-width) / 2);
-
-        display: none;
-        position: absolute;
-        width: 100%;
-        height: calc(100dvh - var(--navbar-height));
-        top: 0;
-        left: 0;
-        padding-left: calc(var(--page-padding) + var(--half-navbar));
-        padding-right: calc(var(--page-padding) - var(--half-navbar));
-        margin-left: auto;
-        margin-right: auto;
-        overflow-y: auto;
-
-        .title {
-            font-size: 40px;
-            font-weight: 600;
-            height: 70px;
-            text-align: center;
-            position: relative;
-        }
-
-        b {
-            font-weight: 600;
-        }
-
-        h1 {
-            font-weight: 550;
-        }
-
-        * {
-            margin-left: auto;
-            margin-right: auto;
-            scroll-behavior: smooth;
-        }
-    }
-
-    body {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        margin: 0px;
-        line-height: 1.4;
-
-        background-color: var(--base);
-        color: var(--text);
-        font-family: "Roboto Flex";
-    }
-
-    #themes {
-        display: none;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    .material-symbols,
-    .material-symbols-filled {
-        font-family: "Material Symbols";
-        font-weight: normal;
-        font-style: normal;
-        font-size: 24px;
-        line-height: 1;
-        letter-spacing: normal;
-        text-transform: none;
-        display: inline-block;
-        white-space: nowrap;
-        word-wrap: normal;
-        direction: ltr;
-        -moz-font-feature-settings: "liga";
-        -moz-osx-font-smoothing: grayscale;
-        font-variation-settings:
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24;
-    }
-
-    .material-symbols {
-        font-variation-settings:
-            'FILL' 0;
-    }
-
-    .material-symbols-filled {
-        font-variation-settings:
-            'FILL' 1;
-    }
+/* Specific widgets that need special styling */
+@layer widgets {
+	#!INCLUDE(widgets/navigation.css)
+   #!INCLUDE(widgets/card.css)
+   #!INCLUDE(widgets/buttons.css)
+   #!INCLUDE(widgets/other.css)
 }
-
-#!INCLUDE(layouts.css)

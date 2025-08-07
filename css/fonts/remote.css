@@ -1,0 +1,29 @@
+/*
+    Loads the woff2 font files for all the fonts my site uses. This is used in
+    the normal build of the site, but the SVG and embedded builds instead use
+    `fonts-embed.css`; see the comment there for an explanation of it.
+*/
+
+@layer defaults {
+	@font-face {
+		font-family: "Material Symbols";
+		font-style: normal;
+		font-weight: 100 700;
+		src: url("fonts/material-icons.trimmed.woff2") format("woff2");
+	}
+	@font-face {
+		font-family: "Roboto Flex";
+		font-style: normal;
+		font-weight: 100 800;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url("fonts/roboto-flex.woff2") format("woff2");
+	}
+	@font-face {
+		font-family: "Roboto Mono";
+		font-style: normal;
+		font-weight: 100 700;
+		font-display: swap;
+		src: url("fonts/roboto-mono.woff2") format("woff2");
+	}
+}

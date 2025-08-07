@@ -1,0 +1,34 @@
+<!--
+	SVG for seeing how CSS measures specific stylings in an embedded SVG
+-->
+<svg version="2.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500"><foreignObject width="800" height="500"><div width="800" height="500" xmlns="http://www.w3.org/1999/xhtml" version="5.2" id="site">
+	<style><![CDATA[
+		* {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+		p {
+			text-align: center;
+			opacity: 0.5;
+		}
+		#full {
+			height: 100vh;
+			width: 100vw;
+			background-color: red;
+		}
+		#perc {
+			height: 100%;
+			width: 100%;
+			background-color: green;
+		}
+		#site {
+			border-style: solid;
+			border-width: 1px;
+			container-name: site;
+		};
+	]]></style>
+
+	<p id="full">100vw by 100vh</p>
+	<p id="perc">100% by 100%</p>
+</div></foreignObject></svg>

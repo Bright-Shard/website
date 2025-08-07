@@ -1,255 +1,257 @@
 #home + .page {
-    text-align: center;
+	text-align: center;
 
-    .title {
-        margin-top: 10%;
-        margin-bottom: 0;
-        margin-left: auto;
-        margin-right: auto;
-        font-family: "Roboto Mono", monospace;
-        color: var(--accent);
+	.title {
+		margin-top: 10%;
+		margin-bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		font-family: "Roboto Mono", monospace;
+		color: var(--theme-accent);
 
-        div {
-            position: absolute;
-            margin: 0;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, 0);
-            width: min-content;
+		div {
+			position: absolute;
+			margin: 0;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+			width: min-content;
 
-            display: flex;
-            flex-direction: row;
+			display: flex;
+			flex-direction: row;
 
-            p {
-                /* How many characters get printed per second */
-                --chars-per-second: 8;
-                /* How many times the cursor blinks at the end of the animation */
-                --blinking-count: 3;
-                --blinking-length: 1s;
-                /* How long the cursor spends blinking at the end of the message */
-                --blinking-total-length: calc(
-                    var(--blinking-length) * var(--blinking-count)
-                );
-                /*
+			p {
+				/* How many characters get printed per second */
+				--chars-per-second: 8;
+				/* How many times the cursor blinks at the end of the animation */
+				--blinking-count: 3;
+				--blinking-length: 1s;
+				/* How long the cursor spends blinking at the end of the message */
+				--blinking-total-length: calc(
+					var(--blinking-length) * var(--blinking-count)
+				);
+				/*
                     Note: `--chars`, `--prev-msgs`, and `--prev-chars` are defined way below this,
                     since they're defined on a per-message basis using element IDs
                 */
 
-                /* The number of seconds it takes to type the whole message */
-                --typing-length: calc(
-                    1s * calc(var(--chars) / var(--chars-per-second))
-                );
-                /* How long the cursor spent typing and deleting previous messages */
-                --prev-typing: calc(
-                    2s * calc(var(--prev-chars) / var(--chars-per-second))
-                );
-                /* How long the cursor spent in blinking animations during previous messages */
-                --prev-blinking: calc(
-                    var(--blinking-total-length) * var(--prev-msgs)
-                );
+				/* The number of seconds it takes to type the whole message */
+				--typing-length: calc(
+					1s * calc(var(--chars) / var(--chars-per-second))
+				);
+				/* How long the cursor spent typing and deleting previous messages */
+				--prev-typing: calc(
+					2s * calc(var(--prev-chars) / var(--chars-per-second))
+				);
+				/* How long the cursor spent in blinking animations during previous messages */
+				--prev-blinking: calc(
+					var(--blinking-total-length) * var(--prev-msgs)
+				);
 
-                /* How long to wait for previous messages to finish before typing this one */
-                --typing-delay: calc(var(--prev-typing) + var(--prev-blinking));
-                --blinking-delay: calc(
-                    var(--typing-delay) + var(--typing-length)
-                );
-                --deleting-delay: calc(
-                    var(--blinking-delay) + var(--blinking-total-length)
-                );
+				/* How long to wait for previous messages to finish before typing this one */
+				--typing-delay: calc(var(--prev-typing) + var(--prev-blinking));
+				--blinking-delay: calc(var(--typing-delay) + var(--typing-length));
+				--deleting-delay: calc(
+					var(--blinking-delay) + var(--blinking-total-length)
+				);
 
-                margin: 0 auto;
-                overflow: hidden;
-                white-space: nowrap;
-                width: 0;
+				margin: 0 auto;
+				overflow: hidden;
+				white-space: nowrap;
+				width: 0;
 
-                /* Order: name duration timing-fn delay iteration-count direction fill-mode play-state */
-                animation:
-                    typing var(--typing-length) steps(var(--chars))
-                        var(--typing-delay) 1 normal forwards,
-                    blinking var(--blinking-length) linear var(--blinking-delay)
-                        var(--blinking-count) normal forwards,
-                    deleting var(--typing-length) steps(var(--chars))
-                        var(--deleting-delay) 1 normal forwards;
+				/* Order: name duration timing-fn delay iteration-count direction fill-mode play-state */
+				animation:
+					typing var(--typing-length) steps(var(--chars))
+						var(--typing-delay) 1 normal forwards,
+					blinking var(--blinking-length) linear var(--blinking-delay)
+						var(--blinking-count) normal forwards,
+					deleting var(--typing-length) steps(var(--chars))
+						var(--deleting-delay) 1 normal forwards;
 
-                border-right-color: transparent;
-                border-right-style: solid;
-                border-right-width: 1px;
-            }
-        }
+				border-right-color: transparent;
+				border-right-style: solid;
+				border-right-width: 1px;
+			}
+		}
 
-        div:last-child p,
-        .last-greeting p {
-            animation:
-                typing var(--typing-length) steps(var(--chars))
-                    var(--typing-delay) 1 normal forwards,
-                blinking var(--blinking-length) linear var(--blinking-delay)
-                    var(--blinking-count) normal forwards;
-        }
-    }
+		div:last-child p,
+		.last-greeting p {
+			animation:
+				typing var(--typing-length) steps(var(--chars)) var(--typing-delay)
+					1 normal forwards,
+				blinking var(--blinking-length) linear var(--blinking-delay)
+					var(--blinking-count) normal forwards;
+		}
+	}
 
-    #socials-list {
-        --icon-size: 48px;
+	#socials-list {
+		--icon-size: 48px;
 
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--padding);
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--gap-large);
 
-        a {
-            margin: 0;
-            text-decoration: none;
-            background-color: var(--mantle);
-            padding: var(--gap);
-            border-radius: 100px;
-            width: calc(var(--icon-size) + calc(var(--gap) * 2));
-            height: calc(var(--icon-size) + calc(var(--gap) * 2));
+		a {
+			margin: 0;
+			text-decoration: none;
+			background-color: var(--theme-mantle);
+			padding: var(--gap);
+			border-radius: 100px;
+			width: calc(var(--icon-size) + calc(var(--gap) * 2));
+			height: calc(var(--icon-size) + calc(var(--gap) * 2));
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
-            &:hover {
-                background-color: color-mix(
-                    in srgb,
-                    var(--mantle) 80%,
-                    var(--accent)
-                );
-            }
-        }
+			&:hover {
+				background-color: color-mix(
+					in srgb,
+					var(--theme-mantle) 80%,
+					var(--theme-accent)
+				);
 
-        svg {
-            height: var(--icon-size);
-            width: var(--icon-size);
-        }
+				&::before {
+					opacity: 0;
+				}
+			}
+		}
 
-        /*
+		svg {
+			height: var(--icon-size);
+			width: var(--icon-size);
+		}
+
+		/*
             Icons are slightly different sizes and need different sizes to look the same size... cursed...
         */
-        #discord-icon {
-            width: 40px;
-            height: 40px;
-        }
-        #mail-icon {
-            font-size: 40px;
-        }
-        #signal-icon {
-            width: 35px;
-            height: 35px;
-        }
-        #github-icon {
-            width: 45px;
-            height: 45px;
-        }
-    }
+		#discord-icon {
+			width: 40px;
+			height: 40px;
+		}
+		#mail-icon {
+			font-size: 40px;
+		}
+		#signal-icon {
+			width: 35px;
+			height: 35px;
+		}
+		#github-icon {
+			width: 45px;
+			height: 45px;
+		}
+	}
 }
 
 #home-greeting-1 {
-    --chars: 24;
-    --prev-chars: 0;
-    --prev-msgs: 0;
+	--chars: 24;
+	--prev-chars: 0;
+	--prev-msgs: 0;
 }
 
 #home-greeting-2 {
-    --chars: 6;
-    --prev-chars: 24;
-    --prev-msgs: 1;
+	--chars: 6;
+	--prev-chars: 24;
+	--prev-msgs: 1;
 }
 
 #home-greeting-3 {
-    --chars: 6;
-    --prev-chars: 30;
-    --prev-msgs: 2;
+	--chars: 6;
+	--prev-chars: 30;
+	--prev-msgs: 2;
 }
 
 #home-greeting-4 {
-    --chars: 6;
-    --prev-chars: 36;
-    --prev-msgs: 3;
+	--chars: 6;
+	--prev-chars: 36;
+	--prev-msgs: 3;
 }
 
 #home ~ .page .title,
 .greeting p {
-    max-width: 100%;
+	max-width: 100%;
 }
 
 @keyframes typing {
-    from {
-        width: 0;
-        border-right-color: var(--text);
-    }
+	from {
+		width: 0;
+		border-right-color: var(--theme-text);
+	}
 
-    to {
-        width: 100%;
-        border-right-color: transparent;
-    }
+	to {
+		width: 100%;
+		border-right-color: transparent;
+	}
 
-    99% {
-        border-right-color: var(--text);
-    }
+	99% {
+		border-right-color: var(--theme-text);
+	}
 }
 @keyframes blinking {
-    from {
-        border-right-color: var(--text);
-    }
+	from {
+		border-right-color: var(--theme-text);
+	}
 
-    to {
-        border-right-color: transparent;
-    }
+	to {
+		border-right-color: transparent;
+	}
 
-    /* Forces the cursor to toggle between visible/invisible in the middle, instead of fading slowly */
-    50% {
-        border-right-color: var(--text);
-    }
-    51% {
-        border-right-color: transparent;
-    }
+	/* Forces the cursor to toggle between visible/invisible in the middle, instead of fading slowly */
+	50% {
+		border-right-color: var(--theme-text);
+	}
+	51% {
+		border-right-color: transparent;
+	}
 }
 @keyframes deleting {
-    from {
-        width: 100%;
-        border-right-color: var(--text);
-    }
+	from {
+		width: 100%;
+		border-right-color: var(--theme-text);
+	}
 
-    to {
-        width: 0;
-        border-right-color: transparent;
-    }
+	to {
+		width: 0;
+		border-right-color: transparent;
+	}
 
-    99% {
-        border-right-color: var(--text);
-    }
+	99% {
+		border-right-color: var(--theme-text);
+	}
 }
 
 /* :3 */
 #why {
-    --chars: 22;
-    --prev-chars: 0;
-    --prev-msgs: 0;
+	--chars: 22;
+	--prev-chars: 0;
+	--prev-msgs: 0;
 }
 #why:not(:target) {
-    display: none !important;
+	display: none !important;
 }
 body:has(#why:target) {
-    #home {
-        .navbar-icon {
-            font-variation-settings: "FILL" 1;
+	#home {
+		.navbar-icon {
+			font-variation-settings: "FILL" 1;
 
-            &::before {
-                opacity: var(--press-opacity);
-            }
-        }
+			&::before {
+				opacity: var(--press-opacity);
+			}
+		}
 
-        &::before {
-            opacity: var(--press-opacity);
-        }
+		&::before {
+			opacity: var(--press-opacity);
+		}
 
-        & + .page {
-            display: block;
+		& + .page {
+			display: block;
 
-            .greeting {
-                display: none;
-            }
-        }
-    }
+			.greeting {
+				display: none;
+			}
+		}
+	}
 }
