@@ -1,1 +1,1 @@
-This repo is now on Codeberg: https://codeberg.com/brightshard/website
+This repo is now on Codeberg: https://codeberg.org/brightshard/website
